@@ -166,8 +166,7 @@ App runs at: **http://localhost:5173**
 
 ## 🔗 Links
 
-- **GitHub**: [github.com/Kurt7275/budget-tracker](https://github.com/Kurt7275/budget-tracker)
-- **Inspired by**: [ComicShelf.online](https://www.comicshelf.online/)
+- **GitHub**: [github.com/Kurt7275/budget-tracker](https://github.com/Kurt7275/comic-tracker)
 
 ---
 
