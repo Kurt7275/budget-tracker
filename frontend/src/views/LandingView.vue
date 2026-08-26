@@ -5,7 +5,7 @@
     <header class="f-nav">
       <div class="f-nav-logo" @click="$router.push('/')">
         <span class="f-nav-logo-box">COMIC</span>
-        <span class="f-nav-logo-text">SHELF</span>
+        <span class="f-nav-logo-text">VERSE</span>
       </div>
 
       <router-link
@@ -28,11 +28,11 @@
           <div class="f-badge-yellow">COMIC TRACKER</div>
 
           <h1 class="f-hero-title">
-            YOUR ENTIRE<br />READING<br />LIFE, ONE SHELF.
+            YOUR COMICS.<br />YOUR UNIVERSE.
           </h1>
 
           <p class="f-hero-desc">
-            Track the comics you own and want to read. Personal media tracker with shelf, watchlist, timeline, stats, and achievements.
+            Track every manga, manhwa, webtoon &amp; comic you read. One universe for your shelf, watchlist, stats, and achievements.
           </p>
 
           <router-link
@@ -136,10 +136,10 @@
       </section>
 
       <!-- ══════════════════════════════════════════════════════════
-           NEW: Theme Toggle Section (MAKE COMICSHELF YOURS)
+           NEW: Theme Toggle Section (MAKE COMICVERSE YOURS)
            ══════════════════════════════════════════════════════════ -->
       <section class="f-theme-section">
-        <h2 class="f-theme-heading">MAKE COMICSHELF YOURS</h2>
+        <h2 class="f-theme-heading">MAKE COMICVERSE YOURS</h2>
 
         <div class="f-theme-box">
           <button
@@ -159,7 +159,7 @@
       <!-- ── 3. Section: EVERYTHING IN ONE SHELF ── -->
       <section class="f-section-wrap">
         <div class="f-section-title-box">
-          <h2>EVERYTHING IN ONE SHELF</h2>
+          <h2>EVERYTHING IN ONE UNIVERSE</h2>
         </div>
 
         <div class="f-six-grid">
@@ -213,10 +213,10 @@
         </div>
       </section>
 
-      <!-- ── 4. Section: HOW COMICSHELF WORKS ── -->
+      <!-- ── 4. Section: HOW COMICVERSE WORKS ── -->
       <section class="f-section-wrap">
         <div class="f-section-title-box">
-          <h2>HOW COMICSHELF WORKS</h2>
+          <h2>HOW COMICVERSE WORKS</h2>
         </div>
 
         <div class="f-how-container">
@@ -265,7 +265,7 @@
 
       <!-- ── 6. Section: FREE NOTICE ── -->
       <section class="f-section-wrap" style="gap: 0.35rem;">
-        <h3 class="f-free-headline">COMICSHELF IS FREE TO START.</h3>
+        <h3 class="f-free-headline">COMICVERSE IS FREE TO START.</h3>
         <p class="f-free-subtitle">All basic features are free forever. No credit card required.</p>
       </section>
 
@@ -286,7 +286,7 @@
 
     <!-- ── 8. Footer ── -->
     <footer class="f-footer">
-      <p>© 2026 ComicShelf • Track Comics, Manga, Manhwa, Watchlists &amp; Achievements.</p>
+      <p>© 2026 ComicVerse • Track Comics, Manga, Manhwa, Watchlists &amp; Achievements.</p>
     </footer>
 
   </div>
@@ -301,18 +301,18 @@ import '../assets/auth.css'
    ========================================================================== */
 const THEMES = [
   { id: 'comic',     label: 'COMIC' },
-  { id: 'anime',     label: 'SAKURA' },
+  { id: 'anime',     label: 'ANIME' },
   { id: 'fantasy',   label: 'FANTASY' },
   { id: 'cyberpunk', label: 'CYBERPUNK' },
   { id: 'horror',    label: 'HORROR' },
   { id: 'nature',    label: 'NATURE' }
 ]
 
-const currentTheme = ref(localStorage.getItem('comicshelf_theme') || 'comic')
+const currentTheme = ref(localStorage.getItem('comicverse_theme') || 'comic')
 
 function setTheme(themeId) {
   currentTheme.value = themeId
-  localStorage.setItem('comicshelf_theme', themeId)
+  localStorage.setItem('comicverse_theme', themeId)
 }
 
 /* ==========================================================================

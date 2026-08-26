@@ -1,13 +1,13 @@
-// ComicShelf Store & Persistence Layer
+// ComicVerse Store & Persistence Layer
 import { reactive, watch } from 'vue'
 
-const USER_SESSION_KEY = 'comicshelf_user'
-const SHELF_CACHE_KEY = 'comicshelf-entries-cache'
-const WATCHLIST_KEY = 'comicshelf-watchlist-cache'
-const THEME_KEY = 'comicshelf-bgtheme'
-const DARK_MODE_KEY = 'comicshelf-dark'
-const TIMELINE_PROGRESS_KEY = 'comicshelf-timeline-progress'
-const GOAL_KEY = 'comicshelf-reading-goal'
+const USER_SESSION_KEY = 'comicverse_user'
+const SHELF_CACHE_KEY = 'comicverse-entries-cache'
+const WATCHLIST_KEY = 'comicverse-watchlist-cache'
+const THEME_KEY = 'comicverse-bgtheme'
+const DARK_MODE_KEY = 'comicverse-dark'
+const TIMELINE_PROGRESS_KEY = 'comicverse-timeline-progress'
+const GOAL_KEY = 'comicverse-reading-goal'
 
 // Preloaded mock data for instant wow-factor
 const INITIAL_ENTRIES = [
@@ -143,7 +143,7 @@ export const comicStore = reactive({
     isLoggedIn: false,
     name: 'Captain Comic',
     username: 'captain_comic',
-    email: 'reader@comicshelf.online',
+    email: 'reader@comicverse.online',
     avatar: '🦸‍♂️',
     bio: 'Comic archivist, manga binger, and multiverse explorer.',
     favoriteUniverse: 'Marvel & Shonen',

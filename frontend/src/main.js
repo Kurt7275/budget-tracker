@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import './assets/base.css'
+import './assets/auth.css'
 
 // Lazy-loaded route views
 const LandingView      = () => import('./views/LandingView.vue')

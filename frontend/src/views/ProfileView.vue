@@ -95,13 +95,13 @@ function exportBackup() {
   const url = URL.createObjectURL(blob)
   const a = document.createElement('a')
   a.href = url
-  a.download = `comicshelf-backup-${new Date().toISOString().split('T')[0]}.json`
+  a.download = `comicverse-backup-${new Date().toISOString().split('T')[0]}.json`
   a.click()
 }
 
 function handleLogout() {
   comicStore.logout()
-  router.push('/login')
+  router.push('/')
 }
 </script>
 

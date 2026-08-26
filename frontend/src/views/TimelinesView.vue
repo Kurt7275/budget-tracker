@@ -132,7 +132,7 @@ function getCompletedCount(tlKey) {
 function toggleStep(tlKey, idx) {
   const k = `${tlKey}_${idx}`
   comicStore.timelineProgress[k] = !comicStore.timelineProgress[k]
-  localStorage.setItem('comicshelf-timeline-progress', JSON.stringify(comicStore.timelineProgress))
+  localStorage.setItem('comicverse-timeline-progress', JSON.stringify(comicStore.timelineProgress))
   if (comicStore.timelineProgress[k]) {
     comicStore.addXp(25)
   }

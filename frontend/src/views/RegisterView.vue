@@ -1,11 +1,11 @@
 <template>
   <div class="cs-auth-page" :data-cs-dark="isDark">
 
-    <!-- ── ComicShelf Header ── -->
+    <!-- ── ComicVerse Header ── -->
     <header class="cs-header">
       <div class="cs-header-logo">
         <span class="cs-header-logo-icon">📚</span>
-        <span class="cs-header-logo-text">ComicShelf</span>
+        <span class="cs-header-logo-text">ComicVerse</span>
       </div>
       <button class="cs-dark-toggle" @click="isDark = !isDark" type="button">
         {{ isDark ? '☀️ Light' : '🌙 Dark' }}
@@ -130,7 +130,7 @@ import { comicStore } from '../stores/useComicStore.js'
 import '../assets/auth.css'
 
 const router = useRouter()
-const isDark = ref(localStorage.getItem('comicshelf-dark') === 'true')
+const isDark = ref(localStorage.getItem('comicverse-dark') === 'true')
 const isLoading = ref(false)
 const showPwd = ref(false)
 const alert = reactive({ message: '', type: 'error' })
@@ -169,7 +169,7 @@ async function handleRegister() {
 async function handleDemo() {
   isLoading.value = true
   await new Promise(r => setTimeout(r, 400))
-  comicStore.login({ name: 'Demo Reader', email: 'demo@comicshelf.online', username: 'demo_reader' })
+  comicStore.login({ name: 'Demo Reader', email: 'demo@comicverse.online', username: 'demo_reader' })
   router.push('/shelf')
 }
 </script>

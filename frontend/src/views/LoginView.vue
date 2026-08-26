@@ -14,7 +14,7 @@
 
         <!-- Red Header Banner -->
         <div class="f-exact-card-header">
-          <div class="f-exact-header-title">COMICSHELF</div>
+          <div class="f-exact-header-title">COMICVERSE</div>
           <div class="f-exact-header-subtitle">YOUR ULTIMATE READING TRACKER!</div>
         </div>
 
@@ -65,7 +65,7 @@ async function handleGoogleSignIn() {
   comicStore.login({
     name: 'Captain Comic',
     username: 'captain_comic',
-    email: 'captain@comicshelf.online'
+    email: 'captain@comicverse.online'
   })
   router.push('/shelf')
 }
