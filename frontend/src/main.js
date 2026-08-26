@@ -4,15 +4,30 @@ import App from './App.vue'
 import './assets/base.css'
 
 // Lazy-loaded route views
-const LoginView    = () => import('./views/LoginView.vue')
-const RegisterView = () => import('./views/RegisterView.vue')
+const LandingView      = () => import('./views/LandingView.vue')
+const LoginView        = () => import('./views/LoginView.vue')
+const RegisterView     = () => import('./views/RegisterView.vue')
+const ShelfView        = () => import('./views/ShelfView.vue')
+const DiscoverView     = () => import('./views/DiscoverView.vue')
+const TimelinesView    = () => import('./views/TimelinesView.vue')
+const WatchlistView    = () => import('./views/WatchlistView.vue')
+const StatsView        = () => import('./views/StatsView.vue')
+const AchievementsView = () => import('./views/AchievementsView.vue')
+const ProfileView      = () => import('./views/ProfileView.vue')
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/',         redirect: '/login' },
-    { path: '/login',    name: 'Login',    component: LoginView },
-    { path: '/register', name: 'Register', component: RegisterView },
+    { path: '/',             name: 'Landing',      component: LandingView },
+    { path: '/login',        name: 'Login',        component: LoginView },
+    { path: '/register',     name: 'Register',     component: LoginView },
+    { path: '/shelf',        name: 'Shelf',        component: ShelfView },
+    { path: '/discover',     name: 'Discover',     component: DiscoverView },
+    { path: '/timelines',    name: 'Timelines',    component: TimelinesView },
+    { path: '/watchlist',    name: 'Watchlist',    component: WatchlistView },
+    { path: '/stats',        name: 'Stats',        component: StatsView },
+    { path: '/achievements', name: 'Achievements', component: AchievementsView },
+    { path: '/profile',      name: 'Profile',      component: ProfileView },
   ],
 })
 

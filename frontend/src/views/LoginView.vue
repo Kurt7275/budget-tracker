@@ -1,192 +1,125 @@
 <template>
-  <div class="auth-page">
-    <div class="auth-card">
+  <div class="cs-standalone-login-page">
 
-      <!-- ── Left: Form Panel ── -->
-      <section class="auth-form-panel">
+    <!-- ── Top-Left Back Button ── -->
+    <router-link to="/" class="cs-login-back-btn" title="Back to Home">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+    </router-link>
 
-        <!-- Logo -->
-        <div class="auth-logo">BudgetFlow</div>
-        <p class="auth-welcome">Welcome back !!!</p>
-        <h1 class="auth-title">Log In</h1>
+    <!-- ── Center Exact Login Card ── -->
+    <div class="cs-standalone-center-wrap">
+      <div class="f-exact-login-card">
 
-        <!-- Alert -->
-        <div
-          v-if="alert.message"
-          :class="['auth-alert', `auth-alert--${alert.type}`]"
-          role="alert"
-          style="margin-bottom: 0.75rem;"
-        >
-          {{ alert.message }}
+        <!-- Red Header Banner -->
+        <div class="f-exact-card-header">
+          <div class="f-exact-header-title">COMICSHELF</div>
+          <div class="f-exact-header-subtitle">YOUR ULTIMATE READING TRACKER!</div>
         </div>
 
-        <form class="auth-form" id="login-form" novalidate @submit.prevent="handleSubmit">
+        <!-- White Card Body -->
+        <div class="f-exact-card-body">
+          <h3 class="f-exact-body-headline">SIGN IN TO CONTINUE!</h3>
+          <p class="f-exact-body-subtext">Track your manga, manhwa, webtoons &amp; more!</p>
 
-          <!-- Email -->
-          <div class="form-field">
-            <label class="field-label" for="login-email">Email</label>
-            <div class="field-input-wrap">
-              <input
-                id="login-email"
-                v-model="form.email"
-                type="email"
-                class="field-input"
-                :class="{ 'is-error': errors.email }"
-                placeholder="login@gmail.com"
-                autocomplete="email"
-                @blur="validateEmail"
-              />
-            </div>
-            <span v-if="errors.email" class="field-error">{{ errors.email }}</span>
-          </div>
-
-          <!-- Password -->
-          <div class="form-field">
-            <div class="form-field-header">
-              <label class="field-label" for="login-password">Password</label>
-              <a href="#" class="field-link" id="forgot-password-link">Forgot Password ?</a>
-            </div>
-            <div class="field-input-wrap">
-              <input
-                id="login-password"
-                v-model="form.password"
-                :type="showPwd ? 'text' : 'password'"
-                class="field-input"
-                :class="{ 'is-error': errors.password }"
-                placeholder="••••••••••••"
-                autocomplete="current-password"
-                @blur="validatePassword"
-              />
-              <button
-                type="button"
-                class="eye-toggle"
-                :aria-label="showPwd ? 'Hide password' : 'Show password'"
-                @click="showPwd = !showPwd"
-              >
-                <!-- Eye open -->
-                <svg v-if="!showPwd" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
-                  <circle cx="12" cy="12" r="3"/>
-                </svg>
-                <!-- Eye slash -->
-                <svg v-else width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
-                  <line x1="1" y1="1" x2="23" y2="23"/>
-                </svg>
-              </button>
-            </div>
-            <span v-if="errors.password" class="field-error">{{ errors.password }}</span>
-          </div>
-
-          <!-- Submit -->
-          <button type="submit" id="login-submit" class="btn-login" :disabled="isLoading">
-            <span v-if="isLoading" class="btn-spinner"></span>
-            <span>{{ isLoading ? 'Logging in…' : 'LOGIN' }}</span>
-            <svg v-if="!isLoading" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </button>
-
-          <!-- Divider -->
-          <div class="auth-divider">or continue with</div>
-
-          <!-- OAuth -->
-          <div class="oauth-row">
-            <!-- Google -->
-            <button type="button" id="oauth-google" class="btn-oauth" aria-label="Continue with Google">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <!-- Yellow Google Sign-In Button -->
+          <button
+            type="button"
+            id="btn-google-signin"
+            class="f-exact-google-btn"
+            :disabled="isLoading"
+            @click="handleGoogleSignIn"
+          >
+            <div class="f-google-icon-circle">
+              <!-- Google Colored 'G' SVG Logo -->
+              <svg width="18" height="18" viewBox="0 0 24 24">
                 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                 <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
                 <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
                 <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
               </svg>
-            </button>
+            </div>
+            <span>{{ isLoading ? 'SIGNING IN…' : 'SIGN IN WITH GOOGLE!' }}</span>
+          </button>
+        </div>
 
-            <!-- GitHub -->
-            <button type="button" id="oauth-github" class="btn-oauth" aria-label="Continue with GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
-              </svg>
-            </button>
-
-            <!-- Facebook -->
-            <button type="button" id="oauth-facebook" class="btn-oauth" aria-label="Continue with Facebook">
-              <svg viewBox="0 0 24 24" fill="#1877F2">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-              </svg>
-            </button>
-          </div>
-
-        </form>
-
-        <!-- Switch -->
-        <p class="auth-switch">
-          Don't have an account yet?
-          <router-link to="/register" id="go-to-register">Sign up for free</router-link>
-        </p>
-      </section>
-
-      <!-- ── Right: Illustration Panel ── -->
-      <aside class="auth-illus-panel" aria-hidden="true">
-        <img
-          src="/login-illustration.jpg"
-          alt="Person sitting on chair using laptop with cactus"
-          draggable="false"
-        />
-      </aside>
-
+      </div>
     </div>
+
   </div>
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { comicStore } from '../stores/useComicStore.js'
 import '../assets/auth.css'
 
-const router  = useRouter()
-const showPwd = ref(false)
+const router = useRouter()
 const isLoading = ref(false)
-const alert   = reactive({ message: '', type: 'error' })
 
-const form   = reactive({ email: '', password: '' })
-const errors = reactive({ email: '', password: '' })
-
-function validateEmail() {
-  if (!form.email)
-    errors.email = 'Email is required.'
-  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
-    errors.email = 'Enter a valid email address.'
-  else
-    errors.email = ''
-}
-
-function validatePassword() {
-  errors.password = form.password.length < 1 ? 'Password is required.' : ''
-}
-
-function isValid() {
-  validateEmail()
-  validatePassword()
-  return !errors.email && !errors.password
-}
-
-async function handleSubmit() {
-  alert.message = ''
-  if (!isValid()) return
+async function handleGoogleSignIn() {
   isLoading.value = true
-  try {
-    // TODO: await api.post('/login', form)
-    await new Promise(r => setTimeout(r, 1400))
-    if (form.email !== 'demo@budgetflow.com') throw new Error()
-    alert.type = 'success'
-    alert.message = '✅ Login successful! Redirecting…'
-    setTimeout(() => router.push('/dashboard'), 1000)
-  } catch {
-    alert.type = 'error'
-    alert.message = '⚠ Invalid email or password. Please try again.'
-  } finally {
-    isLoading.value = false
-  }
+  await new Promise(r => setTimeout(r, 450))
+  comicStore.login({
+    name: 'Captain Comic',
+    username: 'captain_comic',
+    email: 'captain@comicshelf.online'
+  })
+  router.push('/shelf')
 }
 </script>
+
+<style scoped>
+.cs-standalone-login-page {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--f-bg);
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1.2px, transparent 1.2px);
+  background-size: 13px 13px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+/* Back button at top-left */
+.cs-login-back-btn {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 52px;
+  height: 34px;
+  background: #FFFFFF;
+  border: 3px solid #111111;
+  border-radius: 4px;
+  box-shadow: 3px 3px 0px #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111111;
+  cursor: pointer;
+  transition: transform 100ms ease, box-shadow 100ms ease, background 100ms ease;
+  z-index: 50;
+}
+
+.cs-login-back-btn:hover {
+  background: var(--f-yellow);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #111111;
+}
+
+.cs-login-back-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #111111;
+}
+
+.cs-standalone-center-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>

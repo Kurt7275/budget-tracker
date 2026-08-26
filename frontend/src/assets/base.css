@@ -1,106 +1,86 @@
 /* ============================================
-   BudgetFlow — Design System
+   ComicShelf.online — Exact Design System
+   Extracted from live comicshelf.online bundle
    ============================================ */
 
-/* --- Tokens --- */
 :root {
-  /* Brand Palette */
-  --color-brand-50:  hsl(215, 100%, 97%);
-  --color-brand-100: hsl(215, 94%, 92%);
-  --color-brand-200: hsl(213, 93%, 83%);
-  --color-brand-300: hsl(211, 91%, 70%);
-  --color-brand-400: hsl(213, 89%, 58%);
-  --color-brand-500: hsl(217, 91%, 50%);
-  --color-brand-600: hsl(221, 90%, 43%);
-  --color-brand-700: hsl(224, 88%, 36%);
-  --color-brand-800: hsl(226, 84%, 29%);
-  --color-brand-900: hsl(228, 80%, 22%);
+  /* Exact ComicShelf Light Theme (default) */
+  --cs-page-bg:         #f5f0e8;
+  --cs-card-bg:         #fdfaf4;
+  --cs-card-footer-bg:  #ede8da;
+  --cs-filter-bg:       #fdfaf4;
+  --cs-header-bg:       #FF1744;
+  --cs-border:          #1a1a1a;
+  --cs-text:            #1a1009;
+  --cs-shadow:          #8b3a00;
+  --cs-scroll-thumb:    #FF1744;
+  --cs-scroll-track:    #FFD600;
+  --cs-chip-active:     #FFD600;
+  --cs-accent:          #FF1744;
 
-  /* Neutral Palette */
-  --color-neutral-0:   hsl(0, 0%, 100%);
-  --color-neutral-50:  hsl(210, 20%, 98%);
-  --color-neutral-100: hsl(220, 14%, 96%);
-  --color-neutral-200: hsl(220, 13%, 91%);
-  --color-neutral-300: hsl(216, 12%, 84%);
-  --color-neutral-400: hsl(218, 11%, 65%);
-  --color-neutral-500: hsl(220, 9%, 46%);
-  --color-neutral-600: hsl(215, 14%, 34%);
-  --color-neutral-700: hsl(217, 19%, 27%);
-  --color-neutral-800: hsl(215, 28%, 17%);
-  --color-neutral-900: hsl(221, 39%, 11%);
+  /* Halftone dot pattern — light (from bundle: rgba(0,0,0,0.1)) */
+  --cs-dot-pattern: radial-gradient(circle, rgba(0,0,0,0.10) 1.8px, transparent 1.8px);
+  --cs-dot-pattern-sm: radial-gradient(circle, rgba(255,200,0,0.30) 1.5px, transparent 1.5px);
 
-  /* Semantic */
-  --color-success: hsl(142, 71%, 45%);
-  --color-error:   hsl(4, 86%, 58%);
-  --color-warning: hsl(38, 92%, 50%);
+  /* Typography — exact from ComicShelf */
+  --font-comic:      'Bangers', cursive;
+  --font-comic-body: 'Comic Neue', cursive;
+  --font-ui:         'Outfit', sans-serif;
 
-  /* Typography */
-  --font-display: 'Plus Jakarta Sans', sans-serif;
-  --font-body:    'Inter', sans-serif;
-
-  --text-xs:   0.75rem;
-  --text-sm:   0.875rem;
-  --text-base: 1rem;
-  --text-lg:   1.125rem;
-  --text-xl:   1.25rem;
-  --text-2xl:  1.5rem;
-  --text-3xl:  1.875rem;
-  --text-4xl:  2.25rem;
-
-  /* Spacing */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.25rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-10: 2.5rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
-
-  /* Radii */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-full: 9999px;
-
-  /* Shadows */
-  --shadow-xs: 0 1px 2px 0 hsl(215 28% 17% / 0.05);
-  --shadow-sm: 0 1px 3px 0 hsl(215 28% 17% / 0.10), 0 1px 2px -1px hsl(215 28% 17% / 0.06);
-  --shadow-md: 0 4px 6px -1px hsl(215 28% 17% / 0.10), 0 2px 4px -2px hsl(215 28% 17% / 0.06);
-  --shadow-lg: 0 10px 15px -3px hsl(215 28% 17% / 0.10), 0 4px 6px -4px hsl(215 28% 17% / 0.05);
-  --shadow-xl: 0 20px 25px -5px hsl(215 28% 17% / 0.10), 0 8px 10px -6px hsl(215 28% 17% / 0.04);
-  --shadow-brand: 0 8px 24px -4px hsl(217 91% 50% / 0.32);
-
-  /* Transitions */
-  --transition-fast: 120ms ease;
-  --transition-base: 200ms ease;
-  --transition-slow: 350ms ease;
+  /* Status badge colors — exact from bundle */
+  --status-reading-bg:     #00c853;
+  --status-reading-text:   #000;
+  --status-reading-shadow: #007700;
+  --status-plan-bg:        #2979ff;
+  --status-plan-text:      #fff;
+  --status-plan-shadow:    #0040bb;
+  --status-done-bg:        #aa00ff;
+  --status-done-text:      #fff;
+  --status-done-shadow:    #6600aa;
+  --status-hold-bg:        #ffab00;
+  --status-hold-text:      #000;
+  --status-hold-shadow:    #cc7700;
+  --status-drop-bg:        #ff1744;
+  --status-drop-text:      #fff;
+  --status-drop-shadow:    #aa0000;
 }
 
-/* --- Reset & Base --- */
+/* Dark mode — exact ComicShelf dark values */
+[data-cs-dark="true"] {
+  --cs-page-bg:        #0a0a0a;
+  --cs-card-bg:        #141414;
+  --cs-card-footer-bg: #0f0f0f;
+  --cs-filter-bg:      #0d0d0d;
+  --cs-header-bg:      #1a0005;
+  --cs-border:         #fff;
+  --cs-text:           #f0f0f0;
+  --cs-shadow:         #FF1744;
+  --cs-scroll-thumb:   #FF1744;
+  --cs-scroll-track:   #181818;
+  --cs-chip-active:    #FF1744;
+  --cs-accent:         #FF1744;
+  --cs-dot-pattern: radial-gradient(circle, rgba(255,255,255,0.05) 1.8px, transparent 1.8px);
+}
+
+/* ─── Reset ─── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
-html {
-  font-size: 16px;
-  -webkit-text-size-adjust: 100%;
-  scroll-behavior: smooth;
-}
+html { font-size: 16px; scroll-behavior: smooth; }
 
 body {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: 1.6;
-  color: var(--color-neutral-800);
-  background-color: var(--color-neutral-50);
+  font-family: var(--font-ui);
+  background-color: var(--cs-page-bg);
+  color: var(--cs-text);
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-image: var(--cs-dot-pattern);
+  background-size: 12px 12px;
+  background-attachment: fixed;
 }
 
 #app {
@@ -109,29 +89,72 @@ body {
   flex-direction: column;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+a { color: inherit; text-decoration: none; }
+
+button, input, select, textarea { font-family: inherit; }
+
+/* ─── Custom Scrollbar — exact ComicShelf ─── */
+::-webkit-scrollbar       { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--cs-scroll-track); }
+::-webkit-scrollbar-thumb {
+  background: var(--cs-scroll-thumb);
+  border-radius: 2px;
 }
 
-img, svg {
-  display: block;
-  max-width: 100%;
+/* ─── ComicShelf hard pop-shadow card ─── */
+.cs-card {
+  background: var(--cs-card-bg);
+  border: 3px solid var(--cs-border);
+  border-radius: 0;  /* ComicShelf uses 0px border-radius for comic theme */
+  box-shadow: 8px 8px 0px var(--cs-shadow), -2px -2px 0px rgba(0,0,0,0.1);
 }
 
-input, button, textarea, select {
-  font: inherit;
+/* ─── Chip/button base — from .chip-btn ─── */
+.chip-btn {
+  border-radius: 0;
+  outline: none;
+  transition: all 0.12s ease-out;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
 }
 
-/* --- Utility Classes --- */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+/* ─── Shared button press anim ─── */
+@keyframes buttonPress {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+button:active { animation: 0.2s ease-out buttonPress; }
+
+/* ─── Entry card transitions — from .entry-card ─── */
+.entry-card {
+  will-change: border-color, box-shadow, transform;
+  transition:
+    transform 0.12s ease-out,
+    box-shadow 0.12s ease-out,
+    border-color 0.12s ease-out !important;
+}
+
+/* ─── Toast slide animations ─── */
+@keyframes toastSlideUp {
+  0%   { opacity: 0; transform: translate(-50%) translateY(20px); }
+  100% { opacity: 1; transform: translate(-50%) translateY(0); }
+}
+@keyframes toastSlideDown {
+  0%   { opacity: 1; transform: translate(-50%) translateY(0); }
+  100% { opacity: 0; transform: translate(-50%) translateY(20px); }
+}
+
+/* ─── Modal overlay animations ─── */
+@keyframes modalOverlayFadeIn  { 0% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes modalContentSlideUp {
+  0%   { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Form slide animations ─── */
+@keyframes formSlideIn {
+  0%   { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
