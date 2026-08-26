@@ -22,6 +22,16 @@
   --f-text: #111111;
   --f-text-muted: #55524E;
 
+  /* Dynamic Theme Variables (Default: Comic) */
+  --theme-bg: #FAF4E8;
+  --theme-bg-pattern: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1.2px, transparent 1.2px);
+  --theme-primary: #FF1744;
+  --theme-primary-hover: #D50000;
+  --theme-primary-text: #FFFFFF;
+  --theme-cta-banner: #FF1744;
+  --theme-showcase-frame: #EDE4D4;
+  --theme-frame-shadow: #5C4033;
+
   --font-comic: 'Bangers', cursive, sans-serif;
   --font-body: 'Comic Neue', cursive, sans-serif;
   --font-ui: 'Outfit', sans-serif;
@@ -32,18 +42,101 @@
   --shadow-xl: 6px 6px 0px #111111;
 }
 
+/* ── Theme Variants ── */
+
+/* 1. Comic (Classic Halftone) */
+.figma-page.theme-comic {
+  --theme-bg: #FAF4E8;
+  --theme-bg-pattern: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1.2px, transparent 1.2px);
+  --theme-bg-size: 13px 13px;
+  --theme-primary: #FF1744;
+  --theme-primary-hover: #D50000;
+  --theme-primary-text: #FFFFFF;
+  --theme-cta-banner: #FF1744;
+  --theme-showcase-frame: #EDE4D4;
+  --theme-frame-shadow: #5C4033;
+}
+
+/* 2. Fantasy (Exact User Image: Lavender Magic Sparkles, Stars & Lightning on Cream) */
+.figma-page.theme-fantasy {
+  --theme-bg: #FAF6EA;
+  --theme-bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='%23D4BBEF'%3E%3C!-- Big Sparkle 1 --%3E%3Cpath d='M20 10 Q20 22 8 22 Q20 22 20 34 Q20 22 32 22 Q20 22 20 10 Z'/%3E%3Cpath d='M29 27 Q29 32 24 32 Q29 32 29 37 Q29 32 34 32 Q29 32 29 27 Z'/%3E%3C!-- Big Sparkle 2 (Offset) --%3E%3Cpath d='M80 70 Q80 82 68 82 Q80 82 80 94 Q80 82 92 82 Q80 82 80 70 Z'/%3E%3Cpath d='M89 87 Q89 92 84 92 Q89 92 89 97 Q89 92 94 92 Q89 92 89 87 Z'/%3E%3C!-- Lightning Bolts --%3E%3Cpath d='M75 18 L70 26 L74 26 L71 33 L78 24 L74 24 Z'/%3E%3Cpath d='M15 78 L10 86 L14 86 L11 93 L18 84 L14 84 Z'/%3E%3C!-- Small Diamond Stars --%3E%3Cpath d='M98 22 L101 25 L98 28 L95 25 Z'/%3E%3Cpath d='M38 82 L41 85 L38 88 L35 85 Z'/%3E%3Cpath d='M55 48 L58 52 L55 56 L52 52 Z'/%3E%3Cpath d='M115 108 L118 112 L115 116 L112 112 Z'/%3E%3C!-- Micro Sparkle --%3E%3Cpath d='M55 10 Q55 15 50 15 Q55 15 55 20 Q55 15 60 15 Q55 15 55 10 Z'/%3E%3Cpath d='M115 70 Q115 75 110 75 Q115 75 115 80 Q115 75 120 75 Q115 75 115 70 Z'/%3E%3C/g%3E%3C/svg%3E");
+  --theme-bg-size: 100px 100px;
+  --theme-primary: #7C4DFF;
+  --theme-primary-hover: #651FFF;
+  --theme-primary-text: #FFFFFF;
+  --theme-cta-banner: #7C4DFF;
+  --theme-showcase-frame: #E8DAEF;
+  --theme-frame-shadow: #4A148C;
+}
+
+/* 3. Anime (Sakura Blossom & Twinkle Starbursts) */
+.figma-page.theme-anime {
+  --theme-bg: #FFF2F6;
+  --theme-bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23FFB3C6'%3E%3C!-- Anime Star --%3E%3Cpath d='M20 8 Q20 18 10 18 Q20 18 20 28 Q20 18 30 18 Q20 18 20 8 Z'/%3E%3Ccircle cx='60' cy='20' r='3.5'/%3E%3Ccircle cx='58' cy='60' r='5' fill='%23FFA4BA'/%3E%3Cpath d='M60 48 Q60 58 50 58 Q60 58 60 68 Q60 58 70 58 Q60 58 60 48 Z'/%3E%3Ccircle cx='20' cy='62' r='2.5'/%3E%3C!-- Mini Cross Sparkles --%3E%3Cpolygon points='38,36 40,40 44,42 40,44 38,48 36,44 32,42 36,40'/%3E%3C/g%3E%3C/svg%3E");
+  --theme-bg-size: 80px 80px;
+  --theme-primary: #FF4081;
+  --theme-primary-hover: #F50057;
+  --theme-primary-text: #FFFFFF;
+  --theme-cta-banner: #FF4081;
+  --theme-showcase-frame: #FFE4EC;
+  --theme-frame-shadow: #880E4F;
+}
+
+/* 4. Cyberpunk (Neon Tech Matrix Grid & Hex Crosses) */
+.figma-page.theme-cyberpunk {
+  --theme-bg: #E8F8F9;
+  --theme-bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 0 L30 60 M0 30 L60 30' stroke='%2380DEEA' stroke-width='0.8' stroke-dasharray='3 3'/%3E%3Ccircle cx='30' cy='30' r='2' fill='%2300BCD4'/%3E%3Crect x='8' y='8' width='3' height='3' fill='%2326C6DA'/%3E%3Crect x='48' y='48' width='3' height='3' fill='%2326C6DA'/%3E%3Cpath d='M10 50 L14 50 M12 48 L12 52' stroke='%2300ACC1' stroke-width='1.2'/%3E%3Cpath d='M50 10 L54 10 M52 8 L52 12' stroke='%2300ACC1' stroke-width='1.2'/%3E%3C/svg%3E");
+  --theme-bg-size: 60px 60px;
+  --theme-primary: #00E5FF;
+  --theme-primary-hover: #00B8D4;
+  --theme-primary-text: #111111;
+  --theme-cta-banner: #00B8D4;
+  --theme-showcase-frame: #B2EBF2;
+  --theme-frame-shadow: #006064;
+}
+
+/* 5. Horror (Blood Splatter / Dark Gothic Cross Grid) */
+.figma-page.theme-horror {
+  --theme-bg: #F4EAE6;
+  --theme-bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23C98B8B'%3E%3C!-- Gothic Blood Cross --%3E%3Cpath d='M25 15 L25 35 L15 35 L15 39 L25 39 L25 55 L29 55 L29 39 L39 39 L39 35 L29 35 L29 15 Z'/%3E%3Ccircle cx='65' cy='25' r='3.5'/%3E%3Ccircle cx='68' cy='32' r='2'/%3E%3Ccircle cx='63' cy='38' r='1.5'/%3E%3Cpath d='M65 55 L65 75 L55 75 L55 79 L65 79 L65 95 L69 95 L69 79 L79 79 L79 75 L69 75 L69 55 Z'/%3E%3C/g%3E%3C/svg%3E");
+  --theme-bg-size: 80px 80px;
+  --theme-primary: #800000;
+  --theme-primary-hover: #5C0000;
+  --theme-primary-text: #FFFFFF;
+  --theme-cta-banner: #800000;
+  --theme-showcase-frame: #E8D5D5;
+  --theme-frame-shadow: #382025;
+}
+
+/* 6. Nature (Botanical Leaves & Forest Sprouts) */
+.figma-page.theme-nature {
+  --theme-bg: #EDF7ED;
+  --theme-bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%2381C784'%3E%3C!-- Leaf Pair 1 --%3E%3Cpath d='M20 20 Q10 10 20 0 Q30 10 20 20 Q20 30 30 20 Q20 20 20 20 Z'/%3E%3Ccircle cx='60' cy='25' r='3'/%3E%3Cpath d='M60 60 Q50 50 60 40 Q70 50 60 60 Q60 70 70 60 Q60 60 60 60 Z'/%3E%3Ccircle cx='20' cy='65' r='3.5'/%3E%3C!-- Sprout Dot --%3E%3Ccircle cx='40' cy='40' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  --theme-bg-size: 80px 80px;
+  --theme-primary: #00C853;
+  --theme-primary-hover: #009624;
+  --theme-primary-text: #111111;
+  --theme-cta-banner: #00C853;
+  --theme-showcase-frame: #D7ECD9;
+  --theme-frame-shadow: #1B5E20;
+}
+
 /* Base resets */
 .figma-page {
   min-height: 100vh;
-  background-color: var(--f-bg);
+  background-color: var(--theme-bg);
   color: var(--f-text);
   font-family: var(--font-ui);
   display: flex;
   flex-direction: column;
-  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1.2px, transparent 1.2px);
-  background-size: 13px 13px;
+  background-image: var(--theme-bg-pattern);
+  background-size: var(--theme-bg-size, 13px 13px);
   overflow-x: hidden;
+  transition: background-color 300ms ease;
 }
+
+
 
 /* ── 1. Top Navbar ── */
 .f-nav {
@@ -181,8 +274,8 @@
   align-items: center;
   justify-content: center;
   gap: 0.45rem;
-  background: var(--f-red);
-  color: #FFF;
+  background: var(--theme-primary);
+  color: var(--theme-primary-text);
   font-family: var(--font-comic);
   font-size: 1.25rem;
   letter-spacing: 0.06em;
@@ -192,12 +285,13 @@
   box-shadow: var(--shadow-md);
   cursor: pointer;
   text-transform: uppercase;
-  transition: transform 100ms ease, box-shadow 100ms ease, background 100ms ease;
+  transition: transform 100ms ease, box-shadow 100ms ease, background 200ms ease;
   user-select: none;
+  text-decoration: none;
 }
 
 .f-btn-red:hover {
-  background: var(--f-red-hover);
+  background: var(--theme-primary-hover);
   transform: translate(-2px, -2px);
   box-shadow: var(--shadow-lg);
 }
@@ -211,24 +305,26 @@
 }
 
 .f-showcase-frame-pic2 {
-  background: #EDE4D4;
+  background: var(--theme-showcase-frame);
   border: 2.5px solid #111111;
   border-radius: 8px;
   padding: 0.6rem;
-  box-shadow: 5px 5px 0px #5C4033, 5px 5px 0px #111111;
+  box-shadow: 5px 5px 0px var(--theme-frame-shadow), 5px 5px 0px #111111;
   max-width: 390px;
   margin: 0 auto;
   transform-origin: 50% 0%;
   animation: comicSwing 3s ease-in-out infinite;
   will-change: transform;
+  transition: background 300ms ease, box-shadow 300ms ease;
 }
 
 .f-showcase-frame-pic2:hover {
   animation-play-state: paused;
   transform: rotate(0deg) scale(1.015);
   transition: transform 400ms ease, box-shadow 400ms ease;
-  box-shadow: 7px 7px 0px #5C4033, 7px 7px 0px #111111;
+  box-shadow: 7px 7px 0px var(--theme-frame-shadow), 7px 7px 0px #111111;
 }
+
 
 
 .f-cards-2x2-pic2 {
@@ -723,9 +819,134 @@
   margin-top: 0.15rem;
 }
 
-/* ── 7. Bottom Crimson CTA Banner ── */
+/* ── Theme Selector Component (Exact Figma Image Spec) ── */
+.f-theme-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  text-align: center;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.f-theme-heading {
+  font-family: var(--font-comic);
+  font-size: 2.35rem;
+  letter-spacing: 0.05em;
+  color: #111111;
+  font-style: italic;
+  text-shadow: 
+    -2px -2px 0 #FFD600,
+     2px -2px 0 #FFD600,
+    -2px  2px 0 #FFD600,
+     2px  2px 0 #FFD600,
+     3.5px 3.5px 0 #111111;
+  transform: skewX(-4deg);
+}
+
+.f-theme-box {
+  background: #FFFFFF;
+  border: 3.5px solid #111111;
+  border-radius: 4px;
+  box-shadow: 7px 7px 0px #111111;
+  padding: 1.15rem 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2rem;
+  flex-wrap: wrap;
+}
+
+.f-theme-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem;
+  transition: transform 120ms ease;
+  outline: none;
+}
+
+.f-theme-item:hover {
+  transform: translateY(-3px);
+}
+
+.f-theme-item:active {
+  transform: translateY(1px);
+}
+
+/* Shape Icons */
+.f-theme-icon {
+  width: 38px;
+  height: 38px;
+  border: 2.5px solid #111111;
+  box-shadow: 2.5px 2.5px 0px #111111;
+  display: block;
+  transition: all 150ms ease;
+}
+
+/* Shape & Color Variants matching the screenshot */
+.f-theme-icon.shape-comic {
+  background: #FF1744;
+  border-radius: 2px;
+}
+
+.f-theme-icon.shape-anime {
+  background: linear-gradient(135deg, #FF4081, #FF80AB);
+  border-radius: 50%;
+}
+
+.f-theme-icon.shape-fantasy {
+  background: linear-gradient(135deg, #7C4DFF, #9C27B0);
+  border-radius: 10px;
+}
+
+.f-theme-icon.shape-cyberpunk {
+  background: #00E5FF;
+  border-radius: 2px;
+}
+
+.f-theme-icon.shape-horror {
+  background: #500008;
+  border-radius: 2px;
+}
+
+.f-theme-icon.shape-nature {
+  background: #2E7D32;
+  border-radius: 50%;
+}
+
+/* Active Highlight Ring (Yellow Outline like the image) */
+.f-theme-item.active .f-theme-icon {
+  box-shadow: 
+    0 0 0 4px #FFD600,
+    0 0 0 6.5px #111111,
+    4.5px 4.5px 0px 5px #111111;
+  transform: scale(1.08);
+}
+
+/* Theme Label Text */
+.f-theme-tag {
+  font-family: var(--font-comic);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-style: italic;
+  color: #111111;
+  text-transform: uppercase;
+}
+
+.f-theme-item.active .f-theme-tag {
+  color: #111111;
+  text-shadow: 1px 1px 0px #FFD600;
+  font-weight: 700;
+}
+
+/* ── 7. Bottom Dynamic CTA Banner ── */
 .f-bottom-cta {
-  background: var(--f-red);
+  background: var(--theme-cta-banner);
   border-top: 3.5px solid #111111;
   border-bottom: 3.5px solid #111111;
   padding: 2.75rem 1.25rem;
@@ -737,6 +958,7 @@
   position: relative;
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 1.5px, transparent 1.5px);
   background-size: 16px 16px;
+  transition: background 300ms ease;
 }
 
 .f-bottom-title {
@@ -764,7 +986,9 @@
   text-transform: uppercase;
   transition: transform 100ms ease, box-shadow 100ms ease;
   user-select: none;
+  text-decoration: none;
 }
+
 
 .f-btn-yellow-lg:hover {
   background: var(--f-yellow-hover);

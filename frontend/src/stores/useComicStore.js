@@ -21,7 +21,7 @@ const INITIAL_ENTRIES = [
     volume: 12,
     totalVolumes: 14,
     rating: 9.5,
-    cover: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&auto=format&fit=crop&q=80',
+    cover: 'https://upload.wikimedia.org/wikipedia/en/6/6c/Solo_Leveling_Volume_1_Cover.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled',
     synopsis: 'In a world where hunters must battle deadly monsters to protect humanity, Sung Jinwoo, notoriously known as the weakest hunter of all mankind, finds himself in a mysterious dual dungeon.',
     publisher: 'D&C Media / KakaoPage',
     genres: ['Action', 'Fantasy', 'Supernatural'],
@@ -186,7 +186,7 @@ export const comicStore = reactive({
       totalEpisodes: 12,
       season: 1,
       rating: 9.0,
-      cover: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&auto=format&fit=crop&q=80',
+      cover: 'https://upload.wikimedia.org/wikipedia/en/6/6c/Solo_Leveling_Volume_1_Cover.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled',
       notes: 'A-1 Pictures nailed the shadow arise sequences.'
     }
   ]),

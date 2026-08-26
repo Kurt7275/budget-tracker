@@ -1,5 +1,5 @@
 <template>
-  <div class="figma-page">
+  <div :class="['figma-page', 'theme-' + currentTheme]">
 
     <!-- ── 1. Top Navbar ── -->
     <header class="f-nav">
@@ -49,7 +49,6 @@
 
         <!-- ══════════════════════════════════════════════════════════
              Right Column: 2x2 Comic Preview Showcase
-             (Data configured in PREVIEW_COMICS array below)
              ══════════════════════════════════════════════════════════ -->
         <div class="f-showcase-frame-pic2">
           <div class="f-cards-2x2-pic2">
@@ -134,6 +133,27 @@
           </div>
         </div>
 
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════
+           NEW: Theme Toggle Section (MAKE COMICSHELF YOURS)
+           ══════════════════════════════════════════════════════════ -->
+      <section class="f-theme-section">
+        <h2 class="f-theme-heading">MAKE COMICSHELF YOURS</h2>
+
+        <div class="f-theme-box">
+          <button
+            v-for="theme in THEMES"
+            :key="theme.id"
+            type="button"
+            class="f-theme-item"
+            :class="{ active: currentTheme === theme.id }"
+            @click="setTheme(theme.id)"
+          >
+            <span class="f-theme-icon" :class="'shape-' + theme.id"></span>
+            <span class="f-theme-tag">{{ theme.label }}</span>
+          </button>
+        </div>
       </section>
 
       <!-- ── 3. Section: EVERYTHING IN ONE SHELF ── -->
@@ -273,18 +293,37 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import '../assets/auth.css'
 
 /* ==========================================================================
+   🎨 THEME TOGGLE CONFIGURATION
+   ========================================================================== */
+const THEMES = [
+  { id: 'comic',     label: 'COMIC' },
+  { id: 'anime',     label: 'ANIME' },
+  { id: 'fantasy',   label: 'FANTASY' },
+  { id: 'cyberpunk', label: 'CYBERPUNK' },
+  { id: 'horror',    label: 'HORROR' },
+  { id: 'nature',    label: 'NATURE' }
+]
+
+const currentTheme = ref(localStorage.getItem('comicshelf_theme') || 'comic')
+
+function setTheme(themeId) {
+  currentTheme.value = themeId
+  localStorage.setItem('comicshelf_theme', themeId)
+}
+
+/* ==========================================================================
    🛠️ PREVIEW COMICS CONFIGURATION
-   To change any comic in the 2x2 showcase, simply update the fields below:
    ========================================================================== */
 const PREVIEW_COMICS = [
   {
     id: 1,
     title: 'SPIDER-MAN: Brand New Day (2026)',
     type: 'COMICS',
-    colorTheme: 'green', // 'green' | 'purple'
+    colorTheme: 'green',
     burstText: 'POW!',
     badgeTopLeft: 'I',
     cover: 'https://static.wikia.nocookie.net/marveldatabase/images/6/6a/Spider-Man_Brand_New_Day_TPB_Vol_2_1.jpg/revision/latest?cb=20260119093357',
