@@ -301,7 +301,7 @@ import '../assets/auth.css'
    ========================================================================== */
 const THEMES = [
   { id: 'comic',     label: 'COMIC' },
-  { id: 'anime',     label: 'ANIME' },
+  { id: 'anime',     label: 'SAKURA' },
   { id: 'fantasy',   label: 'FANTASY' },
   { id: 'cyberpunk', label: 'CYBERPUNK' },
   { id: 'horror',    label: 'HORROR' },

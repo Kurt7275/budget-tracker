@@ -70,18 +70,19 @@
   --theme-frame-shadow: #4A148C;
 }
 
-/* 3. Anime (Vibrant Sakura Pink Frame) */
+/* 3. Sakura / Anime (Authentic Cherry Blossom Blooms & Floating Petals) */
 .figma-page.theme-anime {
-  --theme-bg: #FFF2F6;
-  --theme-bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23FFB3C6'%3E%3C!-- Anime Star --%3E%3Cpath d='M20 8 Q20 18 10 18 Q20 18 20 28 Q20 18 30 18 Q20 18 20 8 Z'/%3E%3Ccircle cx='60' cy='20' r='3.5'/%3E%3Ccircle cx='58' cy='60' r='5' fill='%23FFA4BA'/%3E%3Cpath d='M60 48 Q60 58 50 58 Q60 58 60 68 Q60 58 70 58 Q60 58 60 48 Z'/%3E%3Ccircle cx='20' cy='62' r='2.5'/%3E%3C!-- Mini Cross Sparkles --%3E%3Cpolygon points='38,36 40,40 44,42 40,44 38,48 36,44 32,42 36,40'/%3E%3C/g%3E%3C/svg%3E");
-  --theme-bg-size: 80px 80px;
+  --theme-bg: #FFF5F8;
+  --theme-bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3C!-- 5-Petal Sakura Flower 1 --%3E%3Cg transform='translate(32,32)' fill='%23FFB6C1'%3E%3Ccircle cx='0' cy='-11' r='6.5'/%3E%3Ccircle cx='10' cy='-4' r='6.5'/%3E%3Ccircle cx='7' cy='9' r='6.5'/%3E%3Ccircle cx='-7' cy='9' r='6.5'/%3E%3Ccircle cx='-10' cy='-4' r='6.5'/%3E%3Ccircle cx='0' cy='0' r='3.5' fill='%23FF4081'/%3E%3C/g%3E%3C!-- 5-Petal Sakura Flower 2 (Offset) --%3E%3Cg transform='translate(92,92) scale(0.72)' fill='%23FFA4BA'%3E%3Ccircle cx='0' cy='-11' r='6.5'/%3E%3Ccircle cx='10' cy='-4' r='6.5'/%3E%3Ccircle cx='7' cy='9' r='6.5'/%3E%3Ccircle cx='-7' cy='9' r='6.5'/%3E%3Ccircle cx='-10' cy='-4' r='6.5'/%3E%3Ccircle cx='0' cy='0' r='3.5' fill='%23FF4081'/%3E%3C/g%3E%3C!-- Floating Falling Sakura Petals --%3E%3Cpath d='M82 18 C78 13, 73 22, 77 29 C82 35, 89 27, 85 20 Z' fill='%23FF80AB' transform='rotate(25 82 23)'/%3E%3Cpath d='M22 82 C17 77, 12 86, 16 93 C21 99, 28 91, 24 84 Z' fill='%23FF80AB' transform='rotate(-35 22 87)'/%3E%3Cpath d='M102 48 C99 44, 95 52, 99 58 C103 63, 108 57, 105 50 Z' fill='%23FFA4BA' transform='rotate(40 102 51)'/%3E%3Cpath d='M42 108 C39 104, 35 112, 39 118 C43 123, 48 117, 45 110 Z' fill='%23FFA4BA' transform='rotate(-20 42 111)'/%3E%3C!-- Soft Twinkles --%3E%3Ccircle cx='68' cy='52' r='2' fill='%23FF4081'/%3E%3Ccircle cx='12' cy='12' r='2.5' fill='%23FF4081'/%3E%3Ccircle cx='112' cy='12' r='1.8' fill='%23FF80AB'/%3E%3C/svg%3E");
+  --theme-bg-size: 110px 110px;
   --theme-primary: #FF4081;
   --theme-primary-hover: #F50057;
   --theme-primary-text: #FFFFFF;
   --theme-cta-banner: #FF4081;
-  --theme-showcase-frame: #FFB6C1;
+  --theme-showcase-frame: #FFC0CB;
   --theme-frame-shadow: #9C1151;
 }
+
 
 /* 4. Cyberpunk (Vibrant Electric Cyan Frame) */
 .figma-page.theme-cyberpunk {
