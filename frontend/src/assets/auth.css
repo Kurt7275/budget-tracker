@@ -44,7 +44,7 @@
 
 /* ── Theme Variants ── */
 
-/* 1. Comic (Classic Halftone) */
+/* 1. Comic (Vintage Amber Gold Frame) */
 .figma-page.theme-comic {
   --theme-bg: #FAF4E8;
   --theme-bg-pattern: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1.2px, transparent 1.2px);
@@ -53,11 +53,11 @@
   --theme-primary-hover: #D50000;
   --theme-primary-text: #FFFFFF;
   --theme-cta-banner: #FF1744;
-  --theme-showcase-frame: #EDE4D4;
-  --theme-frame-shadow: #5C4033;
+  --theme-showcase-frame: #FDE4BA;
+  --theme-frame-shadow: #79441B;
 }
 
-/* 2. Fantasy (Exact User Image: Lavender Magic Sparkles, Stars & Lightning on Cream) */
+/* 2. Fantasy (Vibrant Lavender Purple Frame) */
 .figma-page.theme-fantasy {
   --theme-bg: #FAF6EA;
   --theme-bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='%23D4BBEF'%3E%3C!-- Big Sparkle 1 --%3E%3Cpath d='M20 10 Q20 22 8 22 Q20 22 20 34 Q20 22 32 22 Q20 22 20 10 Z'/%3E%3Cpath d='M29 27 Q29 32 24 32 Q29 32 29 37 Q29 32 34 32 Q29 32 29 27 Z'/%3E%3C!-- Big Sparkle 2 (Offset) --%3E%3Cpath d='M80 70 Q80 82 68 82 Q80 82 80 94 Q80 82 92 82 Q80 82 80 70 Z'/%3E%3Cpath d='M89 87 Q89 92 84 92 Q89 92 89 97 Q89 92 94 92 Q89 92 89 87 Z'/%3E%3C!-- Lightning Bolts --%3E%3Cpath d='M75 18 L70 26 L74 26 L71 33 L78 24 L74 24 Z'/%3E%3Cpath d='M15 78 L10 86 L14 86 L11 93 L18 84 L14 84 Z'/%3E%3C!-- Small Diamond Stars --%3E%3Cpath d='M98 22 L101 25 L98 28 L95 25 Z'/%3E%3Cpath d='M38 82 L41 85 L38 88 L35 85 Z'/%3E%3Cpath d='M55 48 L58 52 L55 56 L52 52 Z'/%3E%3Cpath d='M115 108 L118 112 L115 116 L112 112 Z'/%3E%3C!-- Micro Sparkle --%3E%3Cpath d='M55 10 Q55 15 50 15 Q55 15 55 20 Q55 15 60 15 Q55 15 55 10 Z'/%3E%3Cpath d='M115 70 Q115 75 110 75 Q115 75 115 80 Q115 75 120 75 Q115 75 115 70 Z'/%3E%3C/g%3E%3C/svg%3E");
@@ -66,11 +66,11 @@
   --theme-primary-hover: #651FFF;
   --theme-primary-text: #FFFFFF;
   --theme-cta-banner: #7C4DFF;
-  --theme-showcase-frame: #E8DAEF;
+  --theme-showcase-frame: #D1C4E9;
   --theme-frame-shadow: #4A148C;
 }
 
-/* 3. Anime (Sakura Blossom & Twinkle Starbursts) */
+/* 3. Anime (Vibrant Sakura Pink Frame) */
 .figma-page.theme-anime {
   --theme-bg: #FFF2F6;
   --theme-bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23FFB3C6'%3E%3C!-- Anime Star --%3E%3Cpath d='M20 8 Q20 18 10 18 Q20 18 20 28 Q20 18 30 18 Q20 18 20 8 Z'/%3E%3Ccircle cx='60' cy='20' r='3.5'/%3E%3Ccircle cx='58' cy='60' r='5' fill='%23FFA4BA'/%3E%3Cpath d='M60 48 Q60 58 50 58 Q60 58 60 68 Q60 58 70 58 Q60 58 60 48 Z'/%3E%3Ccircle cx='20' cy='62' r='2.5'/%3E%3C!-- Mini Cross Sparkles --%3E%3Cpolygon points='38,36 40,40 44,42 40,44 38,48 36,44 32,42 36,40'/%3E%3C/g%3E%3C/svg%3E");
@@ -79,11 +79,11 @@
   --theme-primary-hover: #F50057;
   --theme-primary-text: #FFFFFF;
   --theme-cta-banner: #FF4081;
-  --theme-showcase-frame: #FFE4EC;
-  --theme-frame-shadow: #880E4F;
+  --theme-showcase-frame: #FFB6C1;
+  --theme-frame-shadow: #9C1151;
 }
 
-/* 4. Cyberpunk (Neon Tech Matrix Grid & Hex Crosses) */
+/* 4. Cyberpunk (Vibrant Electric Cyan Frame) */
 .figma-page.theme-cyberpunk {
   --theme-bg: #E8F8F9;
   --theme-bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 0 L30 60 M0 30 L60 30' stroke='%2380DEEA' stroke-width='0.8' stroke-dasharray='3 3'/%3E%3Ccircle cx='30' cy='30' r='2' fill='%2300BCD4'/%3E%3Crect x='8' y='8' width='3' height='3' fill='%2326C6DA'/%3E%3Crect x='48' y='48' width='3' height='3' fill='%2326C6DA'/%3E%3Cpath d='M10 50 L14 50 M12 48 L12 52' stroke='%2300ACC1' stroke-width='1.2'/%3E%3Cpath d='M50 10 L54 10 M52 8 L52 12' stroke='%2300ACC1' stroke-width='1.2'/%3E%3C/svg%3E");
@@ -92,11 +92,11 @@
   --theme-primary-hover: #00B8D4;
   --theme-primary-text: #111111;
   --theme-cta-banner: #00B8D4;
-  --theme-showcase-frame: #B2EBF2;
+  --theme-showcase-frame: #80DEEA;
   --theme-frame-shadow: #006064;
 }
 
-/* 5. Horror (Blood Splatter / Dark Gothic Cross Grid) */
+/* 5. Horror (Deep Crimson Blood Frame) */
 .figma-page.theme-horror {
   --theme-bg: #F4EAE6;
   --theme-bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23C98B8B'%3E%3C!-- Gothic Blood Cross --%3E%3Cpath d='M25 15 L25 35 L15 35 L15 39 L25 39 L25 55 L29 55 L29 39 L39 39 L39 35 L29 35 L29 15 Z'/%3E%3Ccircle cx='65' cy='25' r='3.5'/%3E%3Ccircle cx='68' cy='32' r='2'/%3E%3Ccircle cx='63' cy='38' r='1.5'/%3E%3Cpath d='M65 55 L65 75 L55 75 L55 79 L65 79 L65 95 L69 95 L69 79 L79 79 L79 75 L69 75 L69 55 Z'/%3E%3C/g%3E%3C/svg%3E");
@@ -105,11 +105,11 @@
   --theme-primary-hover: #5C0000;
   --theme-primary-text: #FFFFFF;
   --theme-cta-banner: #800000;
-  --theme-showcase-frame: #E8D5D5;
-  --theme-frame-shadow: #382025;
+  --theme-showcase-frame: #D32F2F;
+  --theme-frame-shadow: #210004;
 }
 
-/* 6. Nature (Botanical Leaves & Forest Sprouts) */
+/* 6. Nature (Vibrant Emerald Forest Green Frame) */
 .figma-page.theme-nature {
   --theme-bg: #EDF7ED;
   --theme-bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%2381C784'%3E%3C!-- Leaf Pair 1 --%3E%3Cpath d='M20 20 Q10 10 20 0 Q30 10 20 20 Q20 30 30 20 Q20 20 20 20 Z'/%3E%3Ccircle cx='60' cy='25' r='3'/%3E%3Cpath d='M60 60 Q50 50 60 40 Q70 50 60 60 Q60 70 70 60 Q60 60 60 60 Z'/%3E%3Ccircle cx='20' cy='65' r='3.5'/%3E%3C!-- Sprout Dot --%3E%3Ccircle cx='40' cy='40' r='2'/%3E%3C/g%3E%3C/svg%3E");
@@ -118,9 +118,10 @@
   --theme-primary-hover: #009624;
   --theme-primary-text: #111111;
   --theme-cta-banner: #00C853;
-  --theme-showcase-frame: #D7ECD9;
+  --theme-showcase-frame: #A5D6A7;
   --theme-frame-shadow: #1B5E20;
 }
+
 
 /* Base resets */
 .figma-page {
@@ -306,11 +307,11 @@
 
 .f-showcase-frame-pic2 {
   background: var(--theme-showcase-frame);
-  border: 2.5px solid #111111;
+  border: 3.5px solid #111111;
   border-radius: 8px;
-  padding: 0.6rem;
-  box-shadow: 5px 5px 0px var(--theme-frame-shadow), 5px 5px 0px #111111;
-  max-width: 390px;
+  padding: 0.75rem;
+  box-shadow: 6px 6px 0px var(--theme-frame-shadow), 6px 6px 0px #111111;
+  max-width: 395px;
   margin: 0 auto;
   transform-origin: 50% 0%;
   animation: comicSwing 3s ease-in-out infinite;
@@ -322,8 +323,9 @@
   animation-play-state: paused;
   transform: rotate(0deg) scale(1.015);
   transition: transform 400ms ease, box-shadow 400ms ease;
-  box-shadow: 7px 7px 0px var(--theme-frame-shadow), 7px 7px 0px #111111;
+  box-shadow: 8px 8px 0px var(--theme-frame-shadow), 8px 8px 0px #111111;
 }
+
 
 
 
