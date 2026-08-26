@@ -9,7 +9,6 @@
 
 ComicShelf is a **personal media tracker** built for comic readers and manga fans. Track what you own, what you're reading, and what you want to read next — all in one beautifully designed shelf.
 
-Inspired by [ComicShelf.online](https://www.comicshelf.online/), rebuilt from scratch with a custom comic book design system.
 
 ---
 
