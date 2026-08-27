@@ -70,7 +70,13 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-html { font-size: 16px; scroll-behavior: smooth; overflow-x: hidden; }
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
 
 body {
   font-family: var(--font-ui);
@@ -100,6 +106,9 @@ button, input, select, textarea { font-family: inherit; }
 ::-webkit-scrollbar-thumb {
   background: var(--cs-scroll-thumb);
   border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cc1236;
 }
 
 /* ─── ComicVerse hard pop-shadow card ─── */

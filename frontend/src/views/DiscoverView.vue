@@ -39,7 +39,7 @@
       </div>
 
       <!-- User List Grid / Stack -->
-      <div class="cs-disc-users-stack">
+      <div class="cs-disc-users-stack pop-up-contents">
         <div
           v-for="user in filteredUsers"
           :key="user.id"

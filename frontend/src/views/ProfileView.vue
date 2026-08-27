@@ -2,7 +2,7 @@
   <div class="profile-page">
     <Navbar />
 
-    <main class="profile-main">
+    <main class="profile-main fade-in-contents">
       <section class="profile-header">
         <div class="comic-badge-yellow" style="margin-bottom: 0.35rem;">HERO PROFILE</div>
         <h1 class="profile-title">READER SETTINGS &amp; BACKUP</h1>
@@ -116,7 +116,7 @@ function handleLogout() {
 }
 
 .profile-main {
-  max-width: 800px;
+  max-width: 1080px;
   width: 100%;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;

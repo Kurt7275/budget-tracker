@@ -10,7 +10,7 @@
       </section>
 
       <!-- Watchlist Grid -->
-      <div class="watchlist-grid">
+      <div class="watchlist-grid pop-up-contents">
         <div
           v-for="item in comicStore.watchlist"
           :key="item.id"
@@ -72,7 +72,7 @@ import { comicStore } from '../stores/useComicStore.js'
 }
 
 .watchlist-main {
-  max-width: 1240px;
+  max-width: 1080px;
   width: 100%;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;

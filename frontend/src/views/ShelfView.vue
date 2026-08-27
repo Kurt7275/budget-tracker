@@ -144,6 +144,9 @@
         </button>
       </div>
 
+      <!-- Horizontal Black Separator Line -->
+      <div class="shelf-divider-line"></div>
+
       <!-- ── 5. Empty State Message ── -->
       <div v-if="filteredEntries.length === 0" class="cs-empty-state-box">
         <h3 class="cs-empty-state-text">YOUR SHELF IS EMPTY – ADD YOUR FIRST TITLE!</h3>
@@ -154,20 +157,19 @@
       </div>
 
       <!-- ── 6. Titles Display Grid (Exact Attached Screenshots Spec) ── -->
-      <div v-else class="comic-shelf-grid">
+      <TransitionGroup v-else name="card-fade" tag="div" class="comic-shelf-grid pop-up-contents">
         <div
           v-for="item in filteredEntries"
           :key="item.id"
           class="cs-pop-card"
           :class="getStatusThemeClass(item.status)"
         >
+          <div class="cs-pop-burst-tag" :class="getStatusThemeClass(item.status)">
+            {{ getBurstText(item.status) }}
+          </div>
+
           <!-- Cover Art Box -->
           <div class="cs-pop-cover-box" @click="openDetail(item)">
-            <!-- Top Right Slanted Burst Tag -->
-            <div class="cs-pop-burst-tag" :class="getStatusThemeClass(item.status)">
-              {{ getBurstText(item.status) }}
-            </div>
-
             <!-- Cover Image or NO COVER Fallback -->
             <template v-if="item.cover && !item.hasCoverError">
               <img
@@ -195,11 +197,6 @@
             <h3 class="cs-pop-title" :title="item.title" @click="openDetail(item)">
               {{ item.title }}
             </h3>
-
-            <!-- Status/Type Banner Pill -->
-            <div class="cs-pop-type-banner" :class="getStatusThemeClass(item.status)">
-              <span>{{ item.type || 'MANGA' }}</span>
-            </div>
 
             <!-- Chapter Progress & Time -->
             <div class="cs-pop-progress-text-row">
@@ -271,8 +268,12 @@
             </div>
 
           </div>
+
+          <div class="cs-pop-type-banner" :class="getStatusThemeClass(item.status)">
+            <span>{{ item.type || 'MANGA' }}</span>
+          </div>
         </div>
-      </div>
+      </TransitionGroup>
 
     </main>
 

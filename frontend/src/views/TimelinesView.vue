@@ -23,51 +23,53 @@
       </div>
 
       <!-- Active Timeline Journey Card -->
-      <div class="timeline-content-card">
-        <div class="timeline-meta-bar">
-          <div>
-            <h2 style="font-family: var(--font-comic); font-size: 2rem;">{{ activeTimeline.name }}</h2>
-            <p style="font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; color: #666; margin-top: 0.2rem;">
-              {{ activeTimeline.desc }}
-            </p>
-          </div>
-
-          <div class="timeline-progress-pill">
-            <span style="font-family: var(--font-comic); font-size: 1.4rem; color: var(--f-red);">
-              {{ getCompletedCount(selectedKey) }} / {{ activeTimeline.items.length }}
-            </span>
-            <span style="font-family: var(--font-body); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Issues Read</span>
-          </div>
-        </div>
-
-        <!-- Timeline Steps List -->
-        <div class="timeline-steps-stack">
-          <div
-            v-for="(step, idx) in activeTimeline.items"
-            :key="idx"
-            class="timeline-step-row"
-            :class="{ completed: isStepDone(selectedKey, idx) }"
-            @click="toggleStep(selectedKey, idx)"
-          >
-            <div class="step-check-box">
-              <span v-if="isStepDone(selectedKey, idx)">✓</span>
+      <transition name="tab-content-fade" mode="out-in">
+        <div :key="selectedKey" class="timeline-content-card">
+          <div class="timeline-meta-bar">
+            <div>
+              <h2 style="font-family: var(--font-comic); font-size: 2rem;">{{ activeTimeline.name }}</h2>
+              <p style="font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; color: #666; margin-top: 0.2rem;">
+                {{ activeTimeline.desc }}
+              </p>
             </div>
 
-            <div class="step-info-col">
-              <div class="step-num-pill">Step {{ idx + 1 }} • {{ step.era }}</div>
-              <h4 class="step-title-txt">{{ step.title }}</h4>
-              <p class="step-sub-txt">{{ step.desc }}</p>
-            </div>
-
-            <div class="step-right-badge">
-              <span class="card-burst-tag" :class="isStepDone(selectedKey, idx) ? 'completed' : 'reading'">
-                {{ isStepDone(selectedKey, idx) ? 'READ' : 'QUEUED' }}
+            <div class="timeline-progress-pill">
+              <span style="font-family: var(--font-comic); font-size: 1.4rem; color: var(--f-red);">
+                {{ getCompletedCount(selectedKey) }} / {{ activeTimeline.items.length }}
               </span>
+              <span style="font-family: var(--font-body); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Issues Read</span>
             </div>
           </div>
-        </div>
 
-      </div>
+          <!-- Timeline Steps List -->
+          <div class="timeline-steps-stack">
+            <div
+              v-for="(step, idx) in activeTimeline.items"
+              :key="idx"
+              class="timeline-step-row"
+              :class="{ completed: isStepDone(selectedKey, idx) }"
+              @click="toggleStep(selectedKey, idx)"
+            >
+              <div class="step-check-box">
+                <span v-if="isStepDone(selectedKey, idx)">✓</span>
+              </div>
+
+              <div class="step-info-col">
+                <div class="step-num-pill">Step {{ idx + 1 }} • {{ step.era }}</div>
+                <h4 class="step-title-txt">{{ step.title }}</h4>
+                <p class="step-sub-txt">{{ step.desc }}</p>
+              </div>
+
+              <div class="step-right-badge">
+                <span class="card-burst-tag" :class="isStepDone(selectedKey, idx) ? 'completed' : 'reading'">
+                  {{ isStepDone(selectedKey, idx) ? 'READ' : 'QUEUED' }}
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </transition>
 
     </main>
   </div>
@@ -150,7 +152,7 @@ function toggleStep(tlKey, idx) {
 }
 
 .timelines-main {
-  max-width: 1240px;
+  max-width: 1080px;
   width: 100%;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;

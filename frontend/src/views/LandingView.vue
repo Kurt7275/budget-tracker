@@ -274,7 +274,7 @@
     <!-- ── 7. Bottom Crimson CTA Banner ── -->
     <div class="f-bottom-cta">
       <div class="f-badge-yellow">GET STARTED</div>
-      <h2 class="f-bottom-title">READY TO START YOUR SHELF?</h2>
+      <h2 class="f-bottom-title">READY TO START YOUR COMICVERSE?</h2>
       <router-link
         to="/login"
         id="f-bottom-start-btn"
@@ -311,6 +311,7 @@ const THEMES = [
 const currentTheme = ref(localStorage.getItem('comicverse_theme') || 'comic')
 
 function setTheme(themeId) {
+  if (themeId === currentTheme.value) return
   currentTheme.value = themeId
   localStorage.setItem('comicverse_theme', themeId)
 }

@@ -15,11 +15,7 @@
     </transition>
 
     <!-- Main App -->
-    <router-view v-slot="{ Component }">
-      <transition name="page" mode="out-in">
-        <component :is="Component" />
-      </transition>
-    </router-view>
+    <router-view />
 
     <!-- Global Pop-Art Add Modal -->
     <AddModal />
@@ -33,31 +29,63 @@ import AddModal from './components/AddModal.vue'
 const loading = ref(true)
 
 // Lock scroll immediately — before any rendering — so no scrollbar shows during loader
-document.documentElement.style.overflow = 'hidden'
+document.documentElement.style.overflowY = 'hidden'
 document.body.style.overflow = 'hidden'
 
 onMounted(() => {
   setTimeout(() => {
     loading.value = false
-    document.documentElement.style.overflow = ''
+    // Restore overflow-y: scroll to keep scrollbar gutter always reserved
+    // This prevents layout shift when navigating between short/long pages
+    document.documentElement.style.overflowY = 'scroll'
     document.body.style.overflow = ''
   }, 2000)
 })
 </script>
 
 <style>
-/* ── Page Transition ── */
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 0.22s ease, transform 0.22s ease;
+/* ── Category Page Pop-Up Animation ── */
+.category-pop-enter-active {
+  animation: categoryPopUp 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
-.page-enter-from {
-  opacity: 0;
-  transform: translateX(12px);
+
+.category-pop-leave-active {
+  transition: opacity 0.15s ease-out, transform 0.15s ease-out;
 }
-.page-leave-to {
+
+.category-pop-leave-to {
   opacity: 0;
-  transform: translateX(-12px);
+  transform: scale(0.96) translateY(12px);
+}
+
+@keyframes categoryPopUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.93) translateY(24px);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1.018) translateY(-4px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+/* ── Global Page Fade & Slide Transition ── */
+.page-fade-enter-active,
+.page-fade-leave-active {
+  transition: opacity 240ms cubic-bezier(0.16, 1, 0.3, 1), transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.page-fade-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
 }
 
 /* ── Loader Fade Out ── */
