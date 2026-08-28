@@ -456,6 +456,7 @@ const activityBars = computed(() => {
   flex-direction: column;
   gap: 0.15rem;
   min-height: 100px;
+  transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 180ms ease;
 }
 
 .glance-yellow  { background: #F5C800; }
@@ -470,6 +471,13 @@ const activityBars = computed(() => {
 .glance-cards-row > .glance-card:nth-child(3) { transform: rotate(2deg); }
 .glance-cards-row > .glance-card:nth-child(4) { transform: rotate(-1deg); }
 .glance-cards-row > .glance-card:nth-child(5) { transform: rotate(1.8deg); }
+
+/* Clever straightening hover effect: snaps box straight to 0deg when hovered! */
+.glance-cards-row > .glance-card:hover {
+  transform: rotate(0deg) translateY(-5px) scale(1.025) !important;
+  box-shadow: 7px 7px 0 #79441B !important;
+  z-index: 10;
+}
 
 /* Label */
 .glance-label {

@@ -2485,10 +2485,28 @@
 .comic-shelf-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 1rem;
+  gap: 1.25rem;
   margin-top: 0.5rem;
   width: 100%;
-  padding: 0.5rem 0.35rem 0.5rem 0.65rem;
+  padding: 0.75rem 0.5rem 1rem 0.65rem;
+}
+
+/* Organic Pop-Art Rotations for Shelf Series Cards (Matching Stats Boxes) */
+.comic-shelf-grid > .cs-pop-card {
+  transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 180ms ease;
+}
+
+.comic-shelf-grid > .cs-pop-card:nth-child(5n+1) { transform: rotate(-1.5deg); }
+.comic-shelf-grid > .cs-pop-card:nth-child(5n+2) { transform: rotate(1.2deg); }
+.comic-shelf-grid > .cs-pop-card:nth-child(5n+3) { transform: rotate(-2deg); }
+.comic-shelf-grid > .cs-pop-card:nth-child(5n+4) { transform: rotate(1.5deg); }
+.comic-shelf-grid > .cs-pop-card:nth-child(5n+5) { transform: rotate(-1deg); }
+
+/* Clever straightening hover effect: snaps box straight to 0deg when hovered! */
+.comic-shelf-grid > .cs-pop-card:hover {
+  transform: rotate(0deg) translateY(-6px) scale(1.025) !important;
+  box-shadow: 8px 8px 0px #8B3A1C !important;
+  z-index: 10;
 }
 
 .shelf-comic-card {
@@ -3475,6 +3493,229 @@
 @keyframes fadeInContents {
   0%   { opacity: 0; }
   100% { opacity: 1; }
+}
+
+/* ─── Global Mobile Responsiveness Design System ─── */
+
+@media (max-width: 768px) {
+  /* Containers & Padding */
+  .cs-home-page-container,
+  .watchlist-main,
+  .stats-main,
+  .profile-main,
+  .achievements-container,
+  .timelines-main,
+  .cs-discover-main {
+    padding: 1rem 0.75rem 3rem !important;
+    gap: 1rem !important;
+  }
+
+  /* Page Headings */
+  .stats-title,
+  .watchlist-title,
+  .cs-page-header-title,
+  .achievements-title,
+  .profile-title,
+  .timelines-title {
+    font-size: 2rem !important;
+  }
+
+  /* Top Crimson Header */
+  .cs-top-red-header {
+    padding: 0.65rem 0.85rem !important;
+  }
+  .cs-logo-title {
+    font-size: 2.1rem !important;
+  }
+  .cs-logo-tagline {
+    font-size: 0.68rem !important;
+  }
+
+  /* Horizontal Nav Strip Scrollable on Touch */
+  .cs-dark-navbar {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+  }
+  .cs-dark-navbar::-webkit-scrollbar {
+    display: none !important;
+  }
+  .cs-dark-nav-inner {
+    padding: 0 0.5rem !important;
+    width: max-content !important;
+    min-width: 100% !important;
+  }
+  .cs-nav-tab {
+    padding: 0.5rem 0.75rem !important;
+  }
+  .cs-tab-sub {
+    font-size: 0.65rem !important;
+  }
+
+  /* Shelf Stats Counter Cards Row */
+  .cs-stats-cards-row {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+  .cs-stat-card {
+    width: 100% !important;
+    height: 56px !important;
+  }
+  .cs-card-number {
+    font-size: 1.35rem !important;
+  }
+  .cs-card-label {
+    font-size: 0.65rem !important;
+  }
+
+  /* Search & Control Rows */
+  .cs-search-sort-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.65rem !important;
+  }
+  .cs-search-box-wrap {
+    width: 100% !important;
+  }
+  .cs-controls-right {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+  .cs-select-sort {
+    flex: 1 !important;
+  }
+
+  /* Filter Pills Horizontal Scroll */
+  .cs-filter-pills-row {
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    flex-wrap: nowrap !important;
+    padding-bottom: 4px !important;
+  }
+  .cs-filter-pills-row::-webkit-scrollbar {
+    display: none !important;
+  }
+  .cs-pill-btn {
+    flex-shrink: 0 !important;
+    padding: 0.35rem 0.8rem !important;
+    font-size: 0.82rem !important;
+  }
+
+  /* Comic Cards Grid - 2 columns on mobile */
+  .comic-shelf-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
+    gap: 0.75rem !important;
+    padding: 0.4rem 0.1rem !important;
+  }
+  .cs-pop-card-body {
+    padding: 0.65rem 0.65rem 0.75rem !important;
+    gap: 0.35rem !important;
+  }
+  .cs-pop-title {
+    font-size: 1.05rem !important;
+  }
+  .cs-pop-type-banner {
+    font-size: 0.85rem !important;
+    padding: 0.2rem 0.4rem !important;
+  }
+
+  /* Stats Glance Cards Row */
+  .glance-cards-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.65rem !important;
+  }
+  .glance-card {
+    min-height: 90px !important;
+    padding: 0.75rem 0.7rem 0.65rem !important;
+  }
+  .glance-num {
+    font-size: 2.3rem !important;
+  }
+  .glance-type-txt {
+    font-size: 1.8rem !important;
+  }
+  .breakdown-two-col {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Watchlist Grid */
+  .watchlist-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
+    gap: 0.75rem !important;
+  }
+
+  /* Discover Reader Stack */
+  .cs-disc-users-stack {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Timelines Saga Selector */
+  .timeline-sagas-bar {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    flex-wrap: nowrap !important;
+  }
+  .timeline-sagas-bar::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* Achievements Badge Cards */
+  .badge-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.65rem !important;
+  }
+  .locked-badges-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Profile Layout */
+  .profile-hero-card {
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  /* Modals */
+  .f-modal-card,
+  .add-modal-card {
+    width: 94vw !important;
+    max-width: 94vw !important;
+    max-height: 88vh !important;
+    padding: 1.15rem 0.9rem !important;
+    overflow-y: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .cs-logo-tagline {
+    display: none !important;
+  }
+  .cs-logo-title {
+    font-size: 1.75rem !important;
+  }
+  .cs-btn-add span {
+    display: none !important;
+  }
+  .cs-btn-add {
+    padding: 0.4rem 0.55rem !important;
+  }
+  .cs-stats-cards-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .glance-cards-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .glance-num {
+    font-size: 1.95rem !important;
+  }
+  .glance-type-txt {
+    font-size: 1.5rem !important;
+  }
 }
 
 
