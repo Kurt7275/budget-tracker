@@ -149,6 +149,25 @@
       <router-link to="/" class="cs-menu-item" @click="isMenuOpen = false">
         Landing Page
       </router-link>
+      <div class="cs-menu-divider"></div>
+      <div class="cs-menu-theme-section">
+        <span class="cs-menu-theme-label">THEME</span>
+        <div class="cs-menu-theme-grid" role="group" aria-label="Choose theme">
+          <button
+            v-for="theme in THEMES"
+            :key="theme.id"
+            type="button"
+            class="cs-menu-theme-option"
+            :class="{ active: currentTheme === theme.id }"
+            :aria-label="`${theme.label} theme`"
+            :aria-pressed="currentTheme === theme.id"
+            @click="setTheme(theme.id)"
+          >
+            <span class="cs-menu-theme-swatch" :class="`theme-swatch-${theme.id}`"></span>
+            <span>{{ theme.label }}</span>
+          </button>
+        </div>
+      </div>
       <button type="button" class="cs-menu-item" @click="handleSignOut">
         Sign Out
       </button>
@@ -161,9 +180,11 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { comicStore } from '../stores/useComicStore.js'
+import { THEMES, getStoredTheme, applyThemeToDocument } from '../utils/theme.js'
 import '../assets/auth.css'
 
 const isMenuOpen = ref(false)
+const currentTheme = ref(applyThemeToDocument(getStoredTheme()))
 const router = useRouter()
 
 const emit = defineEmits(['open-add-modal'])
@@ -178,5 +199,9 @@ function handleSignOut() {
   isMenuOpen.value = false
   comicStore.logout()
   router.push('/')
+}
+
+function setTheme(themeId) {
+  currentTheme.value = applyThemeToDocument(themeId)
 }
 </script>

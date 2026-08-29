@@ -290,25 +290,16 @@
 <script setup>
 import { ref } from 'vue'
 import '../assets/auth.css'
+import { THEMES, getStoredTheme, applyThemeToDocument } from '../utils/theme.js'
 
 /* ==========================================================================
    🎨 THEME TOGGLE CONFIGURATION
    ========================================================================== */
-const THEMES = [
-  { id: 'comic',     label: 'COMIC' },
-  { id: 'anime',     label: 'ANIME' },
-  { id: 'fantasy',   label: 'FANTASY' },
-  { id: 'cyberpunk', label: 'CYBERPUNK' },
-  { id: 'horror',    label: 'HORROR' },
-  { id: 'nature',    label: 'NATURE' }
-]
-
-const currentTheme = ref(localStorage.getItem('comicverse_theme') || 'comic')
+const currentTheme = ref(applyThemeToDocument(getStoredTheme()))
 
 function setTheme(themeId) {
   if (themeId === currentTheme.value) return
-  currentTheme.value = themeId
-  localStorage.setItem('comicverse_theme', themeId)
+  currentTheme.value = applyThemeToDocument(themeId)
 }
 
 /* ==========================================================================

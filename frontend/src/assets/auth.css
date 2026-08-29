@@ -1736,6 +1736,128 @@
   background: #111111;
 }
 
+/* ── Shared Landing Theme On Dashboard ── */
+html[class*="theme-"] {
+  --f-bg: var(--theme-bg);
+  --f-red: var(--theme-primary);
+  --f-red-hover: var(--theme-primary-hover);
+  --f-text: var(--theme-primary-text);
+  --cs-page-bg: var(--theme-bg);
+  --cs-header-bg: var(--theme-primary);
+  --cs-accent: var(--theme-primary);
+  --cs-shadow: var(--theme-frame-shadow);
+  --cs-dot-pattern: var(--theme-bg-pattern);
+}
+
+html[class*="theme-"] body {
+  background-image: var(--theme-bg-pattern);
+  background-size: var(--theme-bg-size, 13px 13px);
+}
+
+html[class*="theme-"] .shelf-page,
+html[class*="theme-"] .watchlist-page,
+html[class*="theme-"] .cs-disc-page,
+html[class*="theme-"] .feed-page,
+html[class*="theme-"] .tl-page,
+html[class*="theme-"] .stats-page,
+html[class*="theme-"] .achievements-page,
+html[class*="theme-"] .profile-page {
+  background-color: var(--theme-bg);
+  background-image: var(--theme-bg-pattern);
+  background-size: var(--theme-bg-size, 13px 13px);
+}
+
+html[class*="theme-"] .cs-top-red-header {
+  background: var(--theme-primary);
+}
+
+html[class*="theme-"] .cs-nav-tab.active {
+  background: var(--theme-primary);
+  color: var(--theme-primary-text);
+}
+
+html[class*="theme-"] .cs-nav-tab.active .cs-tab-main,
+html[class*="theme-"] .cs-nav-tab.active .cs-tab-sub {
+  color: var(--theme-primary-text);
+}
+
+html[class*="theme-"] .cs-menu-dropdown {
+  box-shadow: 6px 6px 0px var(--theme-frame-shadow);
+}
+
+html[class*="theme-"] .cs-menu-item:hover {
+  background: var(--theme-primary);
+  color: var(--theme-primary-text);
+}
+
+.cs-menu-theme-section {
+  padding: 0.8rem 0.85rem 0.9rem;
+  background: #F4ECE0;
+}
+
+.cs-menu-theme-label {
+  display: block;
+  margin-bottom: 0.55rem;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #55524E;
+}
+
+.cs-menu-theme-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+
+.cs-menu-theme-option {
+  min-width: 0;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.4rem;
+  border: 1.5px solid #111111;
+  border-radius: 3px;
+  background: #FFFFFF;
+  color: #111111;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 100ms ease, box-shadow 100ms ease, background 100ms ease;
+}
+
+.cs-menu-theme-option:hover,
+.cs-menu-theme-option.active {
+  background: #FFD600;
+  transform: translate(-1px, -1px);
+  box-shadow: 2px 2px 0 #111111;
+}
+
+.cs-menu-theme-option.active {
+  outline: 2px solid var(--theme-primary);
+  outline-offset: -4px;
+}
+
+.cs-menu-theme-swatch {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 12px;
+  border: 1.5px solid #111111;
+  border-radius: 50%;
+}
+
+.theme-swatch-comic { background: #FF1744; }
+.theme-swatch-anime { background: #F472B6; }
+.theme-swatch-fantasy { background: #7C4DFF; }
+.theme-swatch-cyberpunk { background: #00E5FF; }
+.theme-swatch-horror { background: #800000; }
+.theme-swatch-nature { background: #00C853; }
+
 /* ── 3. Home Page Layout ── */
 .cs-home-page-container {
   max-width: 1320px;
@@ -3721,7 +3843,5 @@
     font-size: 1.5rem !important;
   }
 }
-
-
 
 
