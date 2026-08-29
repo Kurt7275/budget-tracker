@@ -273,19 +273,19 @@ function toggleFollow(user) {
   background: #FFFFFF;
   color: #111111;
   border: 2.5px solid #111111;
-  box-shadow: 4px 4px 0px #79441B;
+  box-shadow: 4px 4px 0px var(--theme-shadow);
   transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
 }
 
 .feed-subtab-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 5.5px 5.5px 0px #79441B;
+  box-shadow: 5.5px 5.5px 0px var(--theme-shadow);
 }
 
 .feed-subtab-btn.active {
   background: #F5D13B;
   color: #111111;
-  box-shadow: 4px 4px 0px #79441B;
+  box-shadow: 4px 4px 0px var(--theme-shadow);
 }
 
 /* Tab Content Box */
@@ -336,7 +336,7 @@ function toggleFollow(user) {
   background: #FFFFFF;
   border: 2.5px solid #111111;
   border-radius: 4px;
-  box-shadow: 5px 5px 0px #79441B;
+  box-shadow: 5px 5px 0px var(--theme-shadow);
   padding: 1rem 1.25rem;
   display: flex;
   align-items: center;
@@ -346,7 +346,7 @@ function toggleFollow(user) {
 
 .feed-user-row-card:hover {
   transform: translateY(-2px);
-  box-shadow: 7px 7px 0px #79441B;
+  box-shadow: 7px 7px 0px var(--theme-shadow);
 }
 
 .feed-user-left {
@@ -417,7 +417,7 @@ function toggleFollow(user) {
   color: #111111;
   border: 2.5px solid #111111;
   border-radius: 4px;
-  box-shadow: 3.5px 3.5px 0px #79441B;
+  box-shadow: 3.5px 3.5px 0px var(--theme-shadow);
   padding: 0.45rem 1.15rem;
   cursor: pointer;
   display: flex;
@@ -428,7 +428,7 @@ function toggleFollow(user) {
 
 .feed-btn-following:hover {
   transform: translateY(-2px);
-  box-shadow: 5px 5px 0px #79441B;
+  box-shadow: 5px 5px 0px var(--theme-shadow);
   background: #FFFDF5;
 }
 

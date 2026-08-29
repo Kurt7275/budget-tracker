@@ -566,7 +566,7 @@ onBeforeUnmount(() => {
   background: #FFFFFF;
   border: 2px solid #111;
   border-radius: 999px;
-  box-shadow: 2px 2px 0 #111;
+  box-shadow: 2px 2px 0 var(--theme-shadow);
   cursor: pointer;
   transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease, color 120ms ease;
   white-space: nowrap;
@@ -574,13 +574,13 @@ onBeforeUnmount(() => {
 
 .tl-universe-pill:hover {
   transform: translateY(-1px);
-  box-shadow: 3px 3px 0 #111;
+  box-shadow: 3px 3px 0 var(--theme-shadow);
 }
 
 /* Universe pill category color coding when active */
 .tl-universe-pill.active {
   color: #FFFFFF;
-  box-shadow: 2.5px 2.5px 0 #111;
+  box-shadow: 2.5px 2.5px 0 var(--theme-shadow);
 }
 
 .tl-universe-pill.theme-movie.active { background: #EE3545; }
@@ -622,7 +622,7 @@ onBeforeUnmount(() => {
   background: #FFFFFF;
   border: 2px solid #111;
   border-radius: 3px;
-  box-shadow: 2px 2px 0 #111;
+  box-shadow: 2px 2px 0 var(--theme-shadow);
   cursor: pointer;
   transition: background 120ms ease, transform 100ms ease, color 120ms ease;
 }
@@ -647,7 +647,7 @@ onBeforeUnmount(() => {
   border: 2px solid #111;
   border-radius: 3px;
   padding: 0.28rem 0.65rem;
-  box-shadow: 2px 2px 0 #111;
+  box-shadow: 2px 2px 0 var(--theme-shadow);
 }
 
 .tl-search-input {
@@ -675,11 +675,11 @@ onBeforeUnmount(() => {
   color: var(--theme-accent, #EE3545);
   border: 2px solid #111;
   border-radius: 3px;
-  box-shadow: 2px 2px 0 #111;
+  box-shadow: 2px 2px 0 var(--theme-shadow);
   cursor: pointer;
   transition: transform 100ms ease, box-shadow 100ms ease;
 }
-.tl-share-btn:hover { transform: translateY(-1px); box-shadow: 3px 3px 0 #111; }
+.tl-share-btn:hover { transform: translateY(-1px); box-shadow: 3px 3px 0 var(--theme-shadow); }
 
 /* ── Phase Groups ── */
 .tl-groups-wrap {
@@ -838,7 +838,7 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 1.5px 1.5px 0 #111;
+  box-shadow: 1.5px 1.5px 0 var(--theme-shadow);
 }
 
 .tl-node-circle.node-show {
@@ -904,7 +904,7 @@ onBeforeUnmount(() => {
   background: #FFFFFF;
   border: 2.5px solid #111;
   border-radius: 4px;
-  box-shadow: 3px 3px 0 #111;
+  box-shadow: 3px 3px 0 var(--theme-shadow);
   overflow: hidden;
   transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
 }
@@ -947,7 +947,7 @@ onBeforeUnmount(() => {
   border: 1.5px solid #111;
   border-radius: 3px;
   padding: 0.12rem 0.45rem;
-  box-shadow: 1.5px 1.5px 0 #111;
+  box-shadow: 1.5px 1.5px 0 var(--theme-shadow);
   flex-shrink: 0;
 }
 
@@ -1130,7 +1130,7 @@ onBeforeUnmount(() => {
   background: #FDF9F0;
   border: 2px solid #111;
   border-radius: 4px;
-  box-shadow: 2.5px 2.5px 0 #111;
+  box-shadow: 2.5px 2.5px 0 var(--theme-shadow);
   flex-wrap: wrap;
 }
 
@@ -1143,7 +1143,7 @@ onBeforeUnmount(() => {
 .legend-shape {
   display: inline-block;
   border: 1.8px solid #111;
-  box-shadow: 1px 1px 0 #111;
+  box-shadow: 1px 1px 0 var(--theme-shadow);
   flex-shrink: 0;
 }
 
@@ -1201,7 +1201,7 @@ onBeforeUnmount(() => {
   background: #FFFFFF;
   border: 2.5px solid #111;
   border-radius: 4px;
-  box-shadow: 4px 4px 0 #111;
+  box-shadow: 4px 4px 0 var(--theme-shadow);
   padding: 0.5rem 1rem;
   display: flex;
   align-items: center;

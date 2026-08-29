@@ -108,7 +108,7 @@ import { comicStore } from '../stores/useComicStore.js'
   border: 3px solid #111;
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: 4px 4px 0 #111;
+  box-shadow: 4px 4px 0 var(--theme-shadow);
   display: flex;
   flex-direction: column;
 }

@@ -138,7 +138,7 @@ function handleLogout() {
   border: 3px solid #111;
   border-radius: 8px;
   padding: 1.75rem;
-  box-shadow: 6px 6px 0 #111;
+  box-shadow: 6px 6px 0 var(--theme-shadow);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -162,7 +162,7 @@ function handleLogout() {
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
-  box-shadow: 3px 3px 0 #111;
+  box-shadow: 3px 3px 0 var(--theme-shadow);
 }
 
 .avatar-options-row {
@@ -188,7 +188,7 @@ function handleLogout() {
 
 .avatar-pick-btn.active {
   background: var(--f-yellow);
-  box-shadow: 2px 2px 0 #111;
+  box-shadow: 2px 2px 0 var(--theme-shadow);
   transform: translateY(-2px);
 }
 

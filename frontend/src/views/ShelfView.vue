@@ -293,7 +293,7 @@
         </button>
 
         <div style="display: flex; gap: 1rem; margin-bottom: 1.25rem;">
-          <img :src="selectedItem.cover" :alt="selectedItem.title" style="width: 90px; height: 130px; object-fit: cover; border: 2.5px solid #000; border-radius: 4px; box-shadow: 2px 2px 0 #000;" />
+            <img :src="selectedItem.cover" :alt="selectedItem.title" style="width: 90px; height: 130px; object-fit: cover; border: 2.5px solid #000; border-radius: 4px; box-shadow: 2px 2px 0 var(--theme-shadow);" />
           <div>
             <span class="card-burst-tag" :class="getStatusClass(selectedItem.status)" style="position: static; transform: none; display: inline-block; margin-bottom: 0.35rem;">
               {{ selectedItem.status }}

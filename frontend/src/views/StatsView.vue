@@ -388,12 +388,12 @@ const activityBars = computed(() => {
   background: #EE3545;
   color: #FFFFFF;
   border: 2.5px solid #111111;
-  box-shadow: 4px 4px 0 #79441B;
+  box-shadow: 4px 4px 0 var(--theme-shadow);
 }
 
 .subtab-active:hover {
   transform: translateY(-1px);
-  box-shadow: 5px 5px 0 #79441B;
+  box-shadow: 5px 5px 0 var(--theme-shadow);
 }
 
 .subtab-inactive {
@@ -432,7 +432,7 @@ const activityBars = computed(() => {
   background: #FFF;
   border: 2.5px solid #111;
   border-radius: 4px;
-  box-shadow: 5px 5px 0 #79441B;
+  box-shadow: 5px 5px 0 var(--theme-shadow);
   padding: 1.25rem 1.5rem;
 }
 
@@ -450,7 +450,7 @@ const activityBars = computed(() => {
 .glance-card {
   border: 2.5px solid #111;
   border-radius: 4px;
-  box-shadow: 5px 5px 0 #79441B;
+  box-shadow: 5px 5px 0 var(--theme-shadow);
   padding: 0.9rem 0.85rem 0.75rem;
   display: flex;
   flex-direction: column;
@@ -475,7 +475,7 @@ const activityBars = computed(() => {
 /* Clever straightening hover effect: snaps box straight to 0deg when hovered! */
 .glance-cards-row > .glance-card:hover {
   transform: rotate(0deg) translateY(-5px) scale(1.025) !important;
-  box-shadow: 7px 7px 0 #79441B !important;
+  box-shadow: 7px 7px 0 var(--theme-shadow) !important;
   z-index: 10;
 }
 

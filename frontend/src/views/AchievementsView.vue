@@ -271,7 +271,7 @@ import '../assets/auth.css'
 }
 
 .card-white-brown-shadow {
-  box-shadow: 6px 6px 0px #79441B;
+  box-shadow: 6px 6px 0px var(--theme-shadow);
 }
 
 /* Streak Card Body */
@@ -506,7 +506,7 @@ import '../assets/auth.css'
   align-items: center;
   justify-content: center;
   gap: 0.45rem;
-  box-shadow: 4px 4px 0px #79441B;
+  box-shadow: 4px 4px 0px var(--theme-shadow);
 }
 
 .locked-txt {
