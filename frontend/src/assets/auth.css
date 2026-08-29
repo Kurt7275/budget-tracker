@@ -30,7 +30,7 @@
   --theme-primary-text: #FFFFFF;
   --theme-cta-banner: #FF1744;
   --theme-showcase-frame: #EDE4D4;
-  --theme-frame-shadow: #5C4033;
+  --theme-frame-shadow: #E2D7C3;
 
   --font-comic: 'Bangers', cursive, sans-serif;
   --font-body: 'Comic Neue', cursive, sans-serif;
@@ -54,7 +54,7 @@
   --theme-primary-text: #FFFFFF;
   --theme-cta-banner: #FF1744;
   --theme-showcase-frame: #FDE4BA;
-  --theme-frame-shadow: #79441B;
+  --theme-frame-shadow: #E5CA9B;
 }
 
 /* 2. Fantasy (Vintage Amber Gold BG + Magic Sparkles, Moons & Crystals) */
@@ -67,7 +67,7 @@
   --theme-primary-text: #FFFFFF;
   --theme-cta-banner: #7C4DFF;
   --theme-showcase-frame: #D1C4E9;
-  --theme-frame-shadow: #4A148C;
+  --theme-frame-shadow: #C7B8E0;
 }
 
 /* 3. Anime (Ivory Cream + Balanced Clean Pink Star-Flower Pattern) */
@@ -80,7 +80,7 @@
   --theme-primary-text: #FFFFFF;
   --theme-cta-banner: #F472B6;
   --theme-showcase-frame: #FCE7F3;
-  --theme-frame-shadow: #BE185D;
+  --theme-frame-shadow: #F8D2E5;
 }
 
 
@@ -95,7 +95,7 @@
   --theme-primary-text: #111111;
   --theme-cta-banner: #00B8D4;
   --theme-showcase-frame: #80DEEA;
-  --theme-frame-shadow: #006064;
+  --theme-frame-shadow: #B2EBF2;
 }
 
 /* 5. Horror (Vintage Amber Gold BG + Crimson Ghosts, Bats & Webs) */
@@ -108,7 +108,7 @@
   --theme-primary-text: #FFFFFF;
   --theme-cta-banner: #800000;
   --theme-showcase-frame: #D32F2F;
-  --theme-frame-shadow: #210004;
+  --theme-frame-shadow: #E53935;
 }
 
 /* 6. Nature (Vintage Amber Gold BG + Botanical Sprout Leaves & Clovers) */
@@ -121,7 +121,7 @@
   --theme-primary-text: #111111;
   --theme-cta-banner: #00C853;
   --theme-showcase-frame: #A5D6A7;
-  --theme-frame-shadow: #1B5E20;
+  --theme-frame-shadow: #C8E6C9;
 }
 
 
@@ -341,14 +341,15 @@
   border-radius: 3px;
   display: flex;
   flex-direction: column;
-  box-shadow: 2px 2px 0px #111111;
-  overflow: hidden;
+  box-shadow: 4px 4px 0px #79441B;
+  overflow: visible;
   position: relative;
-  transition: transform 120ms ease;
+  transition: transform 120ms ease, box-shadow 120ms ease;
 }
 
 .f-pic2-card:hover {
   transform: translateY(-2px);
+  box-shadow: 5.5px 5.5px 0px #79441B;
 }
 
 /* Border color variations */
@@ -373,6 +374,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 2px 2px 0 0;
 }
 
 .f-pic2-cover-img {
@@ -383,21 +385,21 @@
   display: block;
 }
 
-/* Floating Corner Burst (POW! / KA-POW!) */
+/* Floating Corner Burst (POW! / KA-POW!) - Exceeding container top-right corner */
 .f-pic2-burst-tag {
   position: absolute;
-  top: 4px;
-  right: 4px;
+  top: -9px;
+  right: -8px;
   font-family: var(--font-comic);
-  font-size: 0.62rem;
+  font-size: 0.65rem;
   letter-spacing: 0.04em;
-  padding: 0.06rem 0.3rem;
+  padding: 0.08rem 0.35rem;
   border: 1.5px solid #0D47A1;
   border-radius: 2px;
-  box-shadow: 1.5px 1.5px 0px #0D47A1;
+  box-shadow: 2px 2px 0px #0D47A1;
   transform: rotate(3deg);
   text-transform: uppercase;
-  z-index: 2;
+  z-index: 10;
 }
 
 .f-pic2-burst-tag.green {
@@ -2895,6 +2897,16 @@
   position: relative;
   margin-top: 0.2rem;
   user-select: none;
+  cursor: pointer;
+  transition: transform 100ms ease, box-shadow 100ms ease, background 100ms ease;
+}
+
+.cs-goal-progress-card:hover,
+.cs-goal-progress-card:focus-visible {
+  background: #FFFDF4;
+  transform: translate(-1.5px, -1.5px);
+  box-shadow: 5.5px 5.5px 0px #8B3A1C;
+  outline: none;
 }
 
 .cs-goal-badge-tag {
@@ -2912,14 +2924,6 @@
   border-radius: 3px;
   box-shadow: 1.5px 1.5px 0px #111111;
   align-self: flex-start;
-  cursor: pointer;
-  transition: transform 100ms ease, box-shadow 100ms ease;
-}
-
-.cs-goal-badge-tag:hover {
-  transform: translateY(-1px);
-  box-shadow: 2px 2px 0px #111111;
-  background: #FFC400;
 }
 
 .cs-goal-bar-row {
@@ -3717,7 +3721,6 @@
     font-size: 1.5rem !important;
   }
 }
-
 
 
 

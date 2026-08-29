@@ -59,23 +59,18 @@
               class="f-pic2-card"
               :class="'border-' + comic.colorTheme"
             >
+              <!-- Floating Corner Burst Tag (Hangs outside top-right corner) -->
+              <div class="f-pic2-burst-tag" :class="comic.colorTheme">
+                {{ comic.burstText }}
+              </div>
+
               <!-- Cover Image Box -->
               <div class="f-pic2-cover-box">
-                <!-- Optional Roman numeral or badge -->
-                <div v-if="comic.badgeTopLeft" class="f-pic2-burst-tag yellow-badge-top">
-                  {{ comic.badgeTopLeft }}
-                </div>
-                
                 <img
                   :src="comic.cover"
                   :alt="comic.title"
                   class="f-pic2-cover-img"
                 />
-
-                <!-- Floating Burst Tag (POW! / KA-POW! / ZAP!) -->
-                <div class="f-pic2-burst-tag" :class="comic.colorTheme">
-                  {{ comic.burstText }}
-                </div>
               </div>
 
               <!-- Card Body -->

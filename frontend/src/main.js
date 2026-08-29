@@ -10,6 +10,7 @@ const LoginView        = () => import('./views/LoginView.vue')
 const RegisterView     = () => import('./views/RegisterView.vue')
 const ShelfView        = () => import('./views/ShelfView.vue')
 const DiscoverView     = () => import('./views/DiscoverView.vue')
+const FeedView         = () => import('./views/FeedView.vue')
 const TimelinesView    = () => import('./views/TimelinesView.vue')
 const WatchlistView    = () => import('./views/WatchlistView.vue')
 const StatsView        = () => import('./views/StatsView.vue')
@@ -24,6 +25,7 @@ const router = createRouter({
     { path: '/register',     name: 'Register',     component: LoginView },
     { path: '/shelf',        name: 'Shelf',        component: ShelfView },
     { path: '/discover',     name: 'Discover',     component: DiscoverView },
+    { path: '/feed',         name: 'Feed',         component: FeedView },
     { path: '/timelines',    name: 'Timelines',    component: TimelinesView },
     { path: '/watchlist',    name: 'Watchlist',    component: WatchlistView },
     { path: '/stats',        name: 'Stats',        component: StatsView },

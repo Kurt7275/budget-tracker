@@ -81,7 +81,7 @@
         </router-link>
 
         <!-- 4. FEED -->
-        <router-link to="/discover" class="cs-nav-tab">
+        <router-link to="/feed" class="cs-nav-tab" active-class="active">
           <div class="cs-tab-main">
             <svg class="cs-tab-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 11a9 9 0 0 1 9 9"/>

@@ -517,7 +517,7 @@ function handleSearch() {
   background: #FFFFFF;
   border: 3.5px solid #111111;
   border-radius: 4px;
-  box-shadow: 4px 4px 0px #111111;
+  box-shadow: 4px 4px 0px #A35028;
   padding: 0 0.85rem;
   height: 48px;
   gap: 0.65rem;
@@ -544,7 +544,7 @@ function handleSearch() {
   background: #F5D13B;
   border: 3.5px solid #111111;
   border-radius: 4px;
-  box-shadow: 4px 4px 0px #111111;
+  box-shadow: 4px 4px 0px #A35028;
   font-family: var(--font-comic);
   font-size: 1.25rem;
   font-style: italic;
@@ -559,12 +559,12 @@ function handleSearch() {
 
 .cs-disc-search-btn:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px #111111;
+  box-shadow: 6px 6px 0px #A35028;
 }
 
 .cs-disc-search-btn:active {
   transform: translate(0, 0);
-  box-shadow: 2px 2px 0px #111111;
+  box-shadow: 2px 2px 0px #A35028;
 }
 
 /* Recommended Section Title */
@@ -595,7 +595,7 @@ function handleSearch() {
   background: #FAF6EE;
   border: 3.5px solid #111111;
   border-radius: 6px;
-  box-shadow: 6px 6px 0px #111111;
+  box-shadow: 6px 6px 0px #A35028;
   padding: 1.1rem 1.4rem;
   cursor: pointer;
   transition: transform 100ms ease, box-shadow 100ms ease;
@@ -603,7 +603,7 @@ function handleSearch() {
 
 .cs-disc-user-card:hover {
   transform: translateY(-2px);
-  box-shadow: 8px 8px 0px #111111;
+  box-shadow: 8px 8px 0px #A35028;
 }
 
 .cs-disc-user-info {
@@ -626,7 +626,7 @@ function handleSearch() {
   font-size: 1.8rem;
   color: #FFFFFF;
   font-style: italic;
-  box-shadow: 2px 2px 0px #111111;
+  box-shadow: 2px 2px 0px #A35028;
 }
 
 .cs-disc-avatar-img {
@@ -671,7 +671,7 @@ function handleSearch() {
   color: #111111;
   border: 3px solid #111111;
   border-radius: 4px;
-  box-shadow: 4px 4px 0px #111111;
+  box-shadow: 4px 4px 0px #A35028;
   padding: 0.55rem 1.4rem;
   font-family: var(--font-comic);
   font-size: 1.15rem;
@@ -686,13 +686,13 @@ function handleSearch() {
 
 .cs-disc-follow-btn:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px #111111;
+  box-shadow: 6px 6px 0px #A35028;
 }
 
 .cs-disc-follow-btn.following {
   background: #00E676;
   color: #111111;
-  box-shadow: 2px 2px 0px #111111;
+  box-shadow: 2px 2px 0px #A35028;
 }
 
 .cs-disc-empty {
@@ -709,7 +709,7 @@ function handleSearch() {
   background: #FAF6EE;
   border: 3.5px solid #111111;
   border-radius: 6px;
-  box-shadow: 8px 8px 0px #111111;
+  box-shadow: 8px 8px 0px #A35028;
   width: 100%;
   max-width: 480px;
   display: flex;
@@ -855,7 +855,7 @@ function handleSearch() {
   color: #FFFFFF;
   border: 3px solid #111111;
   border-radius: 4px;
-  box-shadow: 4px 4px 0px #111111;
+  box-shadow: 4px 4px 0px #A35028;
   font-family: var(--font-comic);
   font-size: 1.25rem;
   font-style: italic;
@@ -870,7 +870,7 @@ function handleSearch() {
 
 .cs-user-action-btn:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px #111111;
+  box-shadow: 6px 6px 0px #A35028;
 }
 
 .cs-user-action-btn.following {
@@ -927,7 +927,7 @@ function handleSearch() {
   font-size: 0.82rem;
   font-weight: 700;
   color: #111111;
-  box-shadow: 2px 2px 0px #111111;
+  box-shadow: 2px 2px 0px #A35028;
 }
 
 /* Latest Additions */
@@ -941,7 +941,7 @@ function handleSearch() {
   background: #FFFFFF;
   border: 3px solid #111111;
   border-radius: 4px;
-  box-shadow: 4px 4px 0px #111111;
+  box-shadow: 4px 4px 0px #A35028;
   overflow: hidden;
   display: flex;
   flex-direction: column;

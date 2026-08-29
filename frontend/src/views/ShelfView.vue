@@ -56,15 +56,23 @@
       </div>
 
       <!-- ── 2. Reading Goal Progress Banner Card (Matching Screenshot) ── -->
-      <div class="cs-goal-progress-card">
-        <button type="button" class="cs-goal-badge-tag" @click="isGoalModalOpen = true">
+      <div
+        class="cs-goal-progress-card"
+        role="button"
+        tabindex="0"
+        aria-label="Edit reading goal"
+        @click="isGoalModalOpen = true"
+        @keydown.enter="isGoalModalOpen = true"
+        @keydown.space.prevent="isGoalModalOpen = true"
+      >
+        <span class="cs-goal-badge-tag">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/>
             <circle cx="12" cy="12" r="6"/>
             <circle cx="12" cy="12" r="2"/>
           </svg>
           <span>{{ comicStore.goal?.year || 2026 }} GOAL</span>
-        </button>
+        </span>
 
         <div class="cs-goal-bar-row">
           <div class="cs-goal-bar-track">
