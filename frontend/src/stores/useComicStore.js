@@ -304,3 +304,8 @@ export const comicStore = reactive({
 watch(() => comicStore.entries, () => {
   comicStore.saveEntries()
 }, { deep: true })
+
+// Auto-sync user watcher
+watch(() => comicStore.user, () => {
+  localStorage.setItem(USER_SESSION_KEY, JSON.stringify(comicStore.user))
+}, { deep: true })

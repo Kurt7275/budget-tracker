@@ -11,7 +11,10 @@
       <div class="profile-card">
         <!-- Avatar Row -->
         <div class="profile-avatar-row">
-          <div class="avatar-display-box">{{ comicStore.user.avatar || '🦸‍♂️' }}</div>
+          <div class="avatar-display-box">
+            <img v-if="isImageAvatar(comicStore.user.avatar)" :src="comicStore.user.avatar" alt="Avatar" style="width:100%; height:100%; object-fit:cover; border-radius:6px;" />
+            <span v-else>{{ comicStore.user.avatar || '🦸‍♂️' }}</span>
+          </div>
           <div>
             <h2 style="font-family: var(--font-comic); font-size: 1.8rem;">{{ comicStore.user.name }}</h2>
             <div style="font-family: var(--font-body); font-size: 0.85rem; font-weight: 700; color: #666;">
@@ -20,12 +23,12 @@
           </div>
         </div>
 
-        <!-- Avatar Choice Pills -->
+        <!-- Avatar Choice Pills & Upload -->
         <div>
-          <label class="f-input-label">Pick Your Superhero Avatar</label>
+          <label class="f-input-label">Pick Superhero Avatar or Upload Photo</label>
           <div class="avatar-options-row">
             <button
-              v-for="av in ['🦸‍♂️', '🦹‍♂️', '🦇', '🕷️', '⚡', '🏴‍☠️', '⚔️', '🐲', '🧙‍♂️']"
+              v-for="av in ['🦸‍♂️', '🦹‍♂️', '🦇', '🕷️', '⚡', '🏴‍☠️', '⚔️', '🐲', '🧙‍♂️', '🥷', '🤖', '🔥']"
               :key="av"
               class="avatar-pick-btn"
               :class="{ active: comicStore.user.avatar === av }"
@@ -33,6 +36,11 @@
             >
               {{ av }}
             </button>
+
+            <button type="button" class="avatar-pick-btn upload-btn" @click="triggerPhotoPicker" title="Upload Custom Photo">
+              📷
+            </button>
+            <input ref="fileInputRef" type="file" accept="image/*" style="display:none" @change="handlePhotoUpload" />
           </div>
         </div>
 
@@ -41,6 +49,11 @@
           <div class="f-input-field">
             <label class="f-input-label">Display Name</label>
             <input v-model="comicStore.user.name" type="text" class="f-input-box" />
+          </div>
+
+          <div class="f-input-field">
+            <label class="f-input-label">Username</label>
+            <input v-model="comicStore.user.username" type="text" class="f-input-box" />
           </div>
 
           <div class="f-input-field">
@@ -77,11 +90,32 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Navbar from '../components/Navbar.vue'
 import { comicStore } from '../stores/useComicStore.js'
 
 const router = useRouter()
+const fileInputRef = ref(null)
+
+function isImageAvatar(av) {
+  return typeof av === 'string' && (av.startsWith('data:') || av.startsWith('http://') || av.startsWith('https://') || av.startsWith('/'))
+}
+
+function triggerPhotoPicker() {
+  fileInputRef.value?.click()
+}
+
+function handlePhotoUpload(e) {
+  const file = e.target.files?.[0]
+  if (!file) return
+  const reader = new FileReader()
+  reader.onload = (ev) => {
+    comicStore.user.avatar = ev.target.result
+  }
+  reader.readAsDataURL(file)
+  e.target.value = ''
+}
 
 function exportBackup() {
   const data = {
@@ -150,6 +184,24 @@ function handleLogout() {
   gap: 1rem;
   border-bottom: 2px solid #EEE;
   padding-bottom: 1.25rem;
+}
+
+.btn-edit-modal-trigger {
+  margin-top: 0.4rem;
+  font-family: var(--font-comic);
+  font-size: 0.9rem;
+  padding: 0.25rem 0.65rem;
+  background: #F5D13B;
+  color: #111;
+  border: 2px solid #111;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #111;
+  transition: transform 0.1s ease;
+}
+
+.btn-edit-modal-trigger:hover {
+  transform: translateY(-1px);
 }
 
 .avatar-display-box {

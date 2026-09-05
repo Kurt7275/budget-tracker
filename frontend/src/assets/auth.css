@@ -1047,7 +1047,7 @@
   background: #FFFFFF;
   border: 3.5px solid #111111;
   border-radius: 0px; /* Sharp classic comic box */
-  box-shadow: 10px 10px 0px var(--theme-shadow);
+  box-shadow: 10px 10px 0px #111111;
   overflow: hidden;
   position: relative;
   animation: popUp 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -1075,7 +1075,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 2px 2px 0px var(--theme-shadow);
+  box-shadow: 2px 2px 0px #111111;
   z-index: 10;
   transition: all 100ms;
 }
@@ -1158,13 +1158,13 @@
   width: 100%;
   padding: 0.85rem 1rem;
   background: #FFD600;
-  color: #111111;
+  color: #FFFFFF;
   font-family: var(--font-comic);
   font-size: 1.45rem;
   letter-spacing: 0.05em;
   border: 3px solid #111111;
   border-radius: 4px;
-  box-shadow: 4px 4px 0px var(--theme-shadow);
+  box-shadow: 4px 4px 0px #111111;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -1178,25 +1178,25 @@
 .f-exact-google-btn:hover {
   background: #FFC400;
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px var(--theme-shadow);
+  box-shadow: 6px 6px 0px #111111;
 }
 
 .f-exact-google-btn:active {
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px var(--theme-shadow);
+  box-shadow: 2px 2px 0px #111111;
 }
 
 .f-google-icon-circle {
   width: 28px;
   height: 28px;
   background: #FFFFFF;
-  border: 1.5px solid #111111;
+  border: none;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 1px 1px 0 var(--theme-shadow);
+  box-shadow: none;
 }
 
 /* ============================================
@@ -1748,7 +1748,8 @@ html[class*="theme-"] {
   --f-bg: var(--theme-bg);
   --f-red: var(--theme-primary);
   --f-red-hover: var(--theme-primary-hover);
-  --f-text: var(--theme-primary-text);
+  --f-text: #111111;
+  --f-text-muted: #55524E;
   --cs-page-bg: var(--theme-bg);
   --cs-header-bg: var(--theme-primary);
   --cs-accent: var(--theme-primary);
